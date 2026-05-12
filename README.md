@@ -1,7 +1,7 @@
 =======
-# NOURISH UP
+# CAMPANIA FINE ARTS SERVICES
 WordPress Theme
 
 * Developer: Lisa DeBona
-* Date Created: 11.15.2023
-* Date Modified: 12.12.2023
+* Date Created: 05.11.2026
+* Date Modified: 05.11.2026
