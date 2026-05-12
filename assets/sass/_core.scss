@@ -1,0 +1,121 @@
+div,h1,h2,h3,h4,h5,h6,p,li,a,span,strong {
+  overflow-wrap: normal;
+  word-wrap: normal;
+  -ms-word-break: normal;
+  word-break: normal;
+  word-break: normal;
+  -ms-hyphens: none;
+  -moz-hyphens: none;
+  -webkit-hyphens: none;
+  hyphens: none;
+  page-break-inside: avoid;
+}
+html, body, *, ::before, ::after  {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+a,input,button,textarea {
+  transition: all ease .3s;
+}
+.sr, .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+  color: #fff;
+  background: #000;
+  display:inline-block;
+}
+body {
+	font-family: $font_secondary;
+	line-height: 1.7;
+	letter-spacing: 0.02em;
+  color: $color_text_main;
+  background: $cream;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: $font_primary;
+  font-weight: 300;
+  line-height: 1.2;
+}
+h2 {font-size: 42px;}
+h3 {font-size: 38px;}
+h4 {font-size: 35px;}
+h5 {font-size: 30px;}
+h6 {font-size: 28px;}
+
+.site {
+  overflow: hidden;
+}
+
+.skip-link {
+  display: inline-block;
+  text-decoration: none;
+  padding: 8px 15px;
+  color: #FFF;
+  background: #000;
+  border-radius: 6px;
+  position: absolute;
+  top: -80vh;
+  left: 10px;
+  box-shadow: 0 5px 16px rgba(0,0,0,0.25);
+  z-index: -999;
+  opacity: 0;
+  &:focus {
+    top: 10px;
+    z-index: 9999;
+    opacity: 1;
+  }
+}
+
+div.buttons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+	&.align-left {
+		justify-content: flex-start;
+	}
+	&.align-right {
+		justify-content: flex-end;
+	}
+	&.align-center {
+		justify-content: center;
+	}
+  .button {
+    display: inline-block;
+    text-decoration: none;
+    appearance: none;
+    border: 2px solid $secondary;
+    padding: 5px 20px;
+    border-radius: 200px;
+    min-width: 120px;
+    text-align: center;
+    background-color: transparent;
+    color: $secondary;
+    font-family: $font_primary;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    overflow: hidden;
+    position: relative;
+    transition: all ease .3s;
+    z-index: 2;
+    &.btn-wide {
+      padding: 12px 15px;
+      min-width: 250px;
+    }
+    &:hover, &:focus {
+      outline: none;
+      background: $secondary;
+      color: #FFF;
+    }
+  }
+}
