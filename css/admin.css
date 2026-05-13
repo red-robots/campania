@@ -1,44 +1,24 @@
-.acf-field-repeater[data-name=restaurant_logos] .acf-image-uploader .image-wrap img {
-  max-width: unset !important;
-  max-height: unset !important;
-  width: auto;
-  height: 50px;
-}
-
-.acf-field-repeater[data-name=slideshow_images] .acf-image-uploader .image-wrap img {
-  max-width: unset !important;
-  max-height: 300px !important;
-  width: auto;
-  height: auto;
-}
-
-.acf-field-group[data-name=icon_block] .acf-image-uploader .image-wrap img {
-  max-width: unset !important;
-  max-height: unset !important;
-  width: auto;
-  height: 90px;
-}
-
-.acf-flexible-content [data-layout*=two_column_image_text] .acf-fields:has([data-name=image_block]):has([data-name=content]) {
+.acf-flexible-content .acf-fields:has([data-name=hero_type]) .acf-field-group[data-name=static] .acf-fields {
   display: flex;
   flex-wrap: wrap;
 }
-.acf-flexible-content [data-layout*=two_column_image_text] .acf-fields:has([data-name=image_block]):has([data-name=content]) .acf-field-group[data-name=image_block] {
+.acf-flexible-content .acf-fields:has([data-name=hero_type]) .acf-field-group[data-name=static] .acf-fields .acf-field {
+  width: 100%;
+}
+.acf-flexible-content .acf-fields:has([data-name=hero_type]) .acf-field-group[data-name=static] .acf-fields .acf-field.acf-field-image {
   width: 40%;
 }
-.acf-flexible-content [data-layout*=two_column_image_text] .acf-fields:has([data-name=image_block]):has([data-name=content]) .acf-field-group[data-name=text_block] {
+.acf-flexible-content .acf-fields:has([data-name=hero_type]) .acf-field-group[data-name=static] .acf-fields .acf-field.acf-field-image .acf-image-uploader .image-wrap {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+.acf-flexible-content .acf-fields:has([data-name=hero_type]) .acf-field-group[data-name=static] .acf-fields .acf-field.acf-field-image .acf-image-uploader .image-wrap img {
+  max-width: 100% !important;
+  width: 100% !important;
+  height: auto !important;
+}
+.acf-flexible-content .acf-fields:has([data-name=hero_type]) .acf-field-group[data-name=static] .acf-fields .acf-field.acf-field-wysiwyg {
   width: 60%;
-}
-
-[data-layout=grid_images]:has(.acf-field-repeater) [data-name=overlay_logo] .image-wrap img {
-  max-height: unset !important;
-  height: 50px !important;
-  width: auto !important;
-}
-[data-layout=grid_images]:has(.acf-field-repeater) [data-name=bg_image] .image-wrap img {
-  max-height: unset !important;
-  height: 80px !important;
-  width: auto !important;
 }
 
 .acf-field-group[data-name=topbottom_spacing] {
