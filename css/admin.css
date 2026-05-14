@@ -20,6 +20,13 @@
 .acf-flexible-content .acf-fields:has([data-name=hero_type]) .acf-field-group[data-name=static] .acf-fields .acf-field.acf-field-wysiwyg {
   width: 60%;
 }
+.acf-flexible-content .acf-fields:has([data-name=hero_type]) .acf-field-group[data-name=static] .acf-fields .acf-field[data-name=hero_image_focal] {
+  border-top: none !important;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40%;
+}
 
 .acf-field-group[data-name=topbottom_spacing] {
   width: 100%;

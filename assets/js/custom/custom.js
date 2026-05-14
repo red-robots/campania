@@ -59,11 +59,10 @@ jQuery(document).ready(function($) {
           delay: 5000, // Time in ms between slides (3 seconds)
           disableOnInteraction: false, // Keeps sliding after user interacts
         },
-        navigation:false,
-        // navigation: {
-        //   nextEl: el.querySelector('.swiper-button-next'),
-        //   prevEl: el.querySelector('.swiper-button-prev'),
-        // },
+        navigation: {
+          nextEl: el.querySelector('.swiper-button-next'),
+          prevEl: el.querySelector('.swiper-button-prev'),
+        },
         pagination: {
           el: el.querySelector('.swiper-pagination'),
           clickable: true,

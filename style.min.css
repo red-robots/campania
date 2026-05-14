@@ -1351,13 +1351,13 @@ html,body,*,::before,::after{box-sizing:border-box;-moz-box-sizing:border-box;-w
 a,input,button,textarea{-webkit-transition:all ease .3s;transition:all ease .3s}
 .sr,.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;color:#fff;background:#000;display:inline-block}
 body{font-family:"Overpass",sans-serif;font-size:16px;line-height:1.6;letter-spacing:.02em;color:#3a2f2a;background:#fff}
-h1,h2,h3,h4,h5,h6{font-family:"Overpass",sans-serif;font-weight:300;line-height:1.2}
+h1,h2,h3,h4,h5,h6{font-family:"Zalando Sans Expanded",sans-serif;font-weight:300;line-height:1.2}
 h2{font-size:42px}
 h3{font-size:38px}
 h4{font-size:35px}
 h5{font-size:30px}
 h6{font-size:28px}
-.site{overflow:hidden}
+.site{position:relative;overflow:hidden}
 .skip-link{display:inline-block;text-decoration:none;padding:8px 15px;color:#fff;background:#000;border-radius:6px;position:absolute;top:-80vh;left:10px;-webkit-box-shadow:0 5px 16px rgba(0,0,0,.25);box-shadow:0 5px 16px rgba(0,0,0,.25);z-index:-999;opacity:0}
 .skip-link:focus{top:10px;z-index:9999;opacity:1}
 div.buttons{display:-webkit-box;display:-ms-flexbox;display:flex;gap:1rem;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin-top:30px}
@@ -1367,7 +1367,7 @@ div.buttons.align-center{-webkit-box-pack:center;-ms-flex-pack:center;justify-co
 div.buttons .button{display:inline-block;text-decoration:none;-webkit-appearance:none;-moz-appearance:none;appearance:none;border:2px solid #caa24d;padding:5px 20px;border-radius:200px;min-width:120px;text-align:center;background-color:transparent;color:#caa24d;font-family:"Overpass",sans-serif;font-size:16px;text-transform:uppercase;letter-spacing:.05em;overflow:hidden;position:relative;-webkit-transition:all ease .3s;transition:all ease .3s;z-index:2}
 div.buttons .button.btn-wide{padding:12px 15px;min-width:250px}
 div.buttons .button:hover,div.buttons .button:focus{outline:0;background:#caa24d;color:#fff}
-.site-header{padding-top:15px;padding-bottom:15px}
+.site-header{padding-top:15px;padding-bottom:15px;position:absolute;top:0;left:0;width:100%;z-index:100}
 .site-header .header-inner{padding-left:20px;padding-right:20px;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
 .site-header .site-logo{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;width:350px}
 .site-header .site-logo a,.site-header .site-logo img{display:block;width:100%;height:auto}
@@ -1380,8 +1380,29 @@ div.buttons .button:hover,div.buttons .button:focus{outline:0;background:#caa24d
 .site-header .main-navigation a.header-cta-button{display:inline-block;text-decoration:none;background:#000;color:#fff;text-transform:uppercase;padding:17px 20px 12px;font-size:16px;line-height:1.3;margin-left:3vw;-webkit-transition:all ease .3s;transition:all ease .3s}
 .site-header .main-navigation a.header-cta-button:hover,.site-header .main-navigation a.header-cta-button:focus{background:#ece9e0;color:#000}
 #main{min-height:30em}
+.static-hero{position:relative;height:750px}
+.static-hero .hero-image-inner{position:relative;top:0;left:0;width:100%;height:100%}
+.static-hero .heroImage{position:absolute;top:0;left:0;width:calc(100% - 80px);height:100%;background-size:cover;background-position:top center;background-repeat:no-repeat}
+.static-hero .heroText{position:absolute;top:0;left:0;width:100%;height:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}
+.static-hero .heroText h1,.static-hero .heroText h2,.static-hero .heroText h3{margin:0}
+.static-hero .heroText .text{max-width:750px;width:100%;background:#ece9e0;color:#000;padding:40px;padding-right:120px;-webkit-transform:translateY(-100px);transform:translateY(-100px)}
+.static-hero .heroText .text p:last-child{margin-bottom:0}
+.slider-hero .slideshow-wrapper{position:relative;width:100%;height:750px}
+.slider-hero .slideshow{width:100%;height:100%}
+.slider-hero .slideshow .swiper-wrapper,.slider-hero .slideshow .swiper-wrapper .swiper-slide{width:100%;height:100%}
+.slider-hero .slideshow .swiper-button-next,.slider-hero .slideshow .swiper-button-prev{display:none}
+.slider-hero .slideshow .swiper-pagination-bullet{width:12px;height:12px;background:rgba(0,0,0,.35);border:1px solid #fff;opacity:1}
+.slider-hero .slideshow .swiper-pagination-bullet.swiper-pagination-bullet-active{opacity:1;background:#fff;-webkit-transform:scale(1.1);transform:scale(1.1)}
+.slider-hero .slideshow .swiper-wrapper .swiper-slide{position:relative}
+.slider-hero .slideshow .swiper-wrapper .swiper-slide .slideImage{position:absolute;top:0;left:0;width:calc(100% - 80px);height:100%;background-size:cover;background-position:top center;background-repeat:no-repeat}
+.slider-hero .slideshow .swiper-wrapper .swiper-slide .slideText{position:absolute;top:0;left:0;width:100%;height:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}
+.slider-hero .slideshow .swiper-wrapper .swiper-slide .slideText h1,.slider-hero .slideshow .swiper-wrapper .swiper-slide .slideText h2,.slider-hero .slideshow .swiper-wrapper .swiper-slide .slideText h3{margin:0}
+.slider-hero .slideshow .swiper-wrapper .swiper-slide .slideText .text{max-width:750px;width:100%;background:#ece9e0;color:#000;padding:40px;padding-right:120px;-webkit-transform:translateX(80px) translateY(-100px);transform:translateX(80px) translateY(-100px)}
+.slider-hero .slideshow .swiper-wrapper .swiper-slide .slideText .text p:last-child{margin-bottom:0}
 @media(min-width:960px){.site-header .header-inner{padding-left:80px;padding-right:80px}
 .site-header .main-navigation{right:-80px}
+}@media screen and (min-width:1381px){.static-hero{height:85vh}
+.slider-hero .slideshow-wrapper{height:85vh}
 }@media(print),(prefers-reduced-motion:reduce){.animated{-webkit-animation-duration:1ms !important;animation-duration:1ms !important;-webkit-transition-duration:1ms !important;transition-duration:1ms !important;-webkit-animation-iteration-count:1 !important;animation-iteration-count:1 !important}
 }@-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}
 100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}

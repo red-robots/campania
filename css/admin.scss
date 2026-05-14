@@ -23,6 +23,13 @@
 					&.acf-field-wysiwyg {
 						width: 60%;
 					}
+					&[data-name="hero_image_focal"] {
+						border-top: none!important;
+						position: absolute;
+						left: 0;
+						bottom: 0;
+						width: 40%;
+					}
 				}
 			}
 		}

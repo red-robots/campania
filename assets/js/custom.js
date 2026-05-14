@@ -129,11 +129,10 @@ jQuery(document).ready(function ($) {
           disableOnInteraction: false // Keeps sliding after user interacts
 
         },
-        navigation: false,
-        // navigation: {
-        //   nextEl: el.querySelector('.swiper-button-next'),
-        //   prevEl: el.querySelector('.swiper-button-prev'),
-        // },
+        navigation: {
+          nextEl: el.querySelector('.swiper-button-next'),
+          prevEl: el.querySelector('.swiper-button-prev')
+        },
         pagination: {
           el: el.querySelector('.swiper-pagination'),
           clickable: true

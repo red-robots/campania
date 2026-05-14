@@ -1,7 +1,7 @@
 <?php
 $partsFiles = get_flexible_parts();
-if( have_rows('repeatable_blocks') ) {
-$i=1; while( have_rows('repeatable_blocks') ): the_row();
+if( have_rows('flexible_content') ) {
+$i=1; while( have_rows('flexible_content') ): the_row();
   if($partsFiles) {
     foreach($partsFiles as $file) {
       include( locate_template('parts-flexible/'.$file) );
