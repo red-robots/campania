@@ -92,18 +92,20 @@ div.buttons {
 		justify-content: center;
 	}
   .button {
+		appearance: none;
     display: inline-block;
     text-decoration: none;
     appearance: none;
-    border: 2px solid $secondary;
-    padding: 5px 20px;
-    border-radius: 200px;
+    border: none;
+    padding: 18px 30px 13px;
+    border-radius: 0;
     min-width: 120px;
     text-align: center;
-    background-color: transparent;
-    color: $secondary;
+    background-color: #000;
+    color: #FFF;
     font-family: $font_primary;
     font-size: 16px;
+		line-height: 1.2;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     overflow: hidden;
@@ -116,8 +118,8 @@ div.buttons {
     }
     &:hover, &:focus {
       outline: none;
-      background: $secondary;
-      color: #FFF;
+      background-color: $primary;
+      color: #000;
     }
   }
 }
@@ -339,6 +341,179 @@ div.buttons {
 					}
 				}
 			}
+		}
+	}
+}
+
+.repeatable {
+	.wrapper {
+		max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+}
+
+.repeatable-text_content {
+	.wrapper {
+		padding-top: 30px;
+		padding-bottom: 30px;
+		@include mid {
+			padding-top: 70px;
+			padding-bottom: 70px;
+		}
+	}
+	p {
+		font-size: 20px;
+    line-height: 1.7;
+	}
+	p:empty {
+		display: none;
+	}
+	div.buttons {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	.flexwrap {
+		display: flex;
+		flex-wrap: wrap;
+		&:has(.columnText1):has(.columnText2) {
+			.columnText {
+				width: 50%;
+				padding: 20px;
+			}
+			.columnText.has-buttons {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				width: 100%;
+				@include tab {
+					width: 40%;
+					align-content: center;
+					flex-wrap: wrap;
+					justify-content: flex-end;
+				}
+			}
+			.columnText:not(.has-buttons) {
+				width: 100%;
+				@include tab {
+					width: 60%;
+				}
+			}
+
+			&:has(.has-buttons-1) {
+				@include tab {
+					.columnText.has-buttons {
+						width: 30%;
+					}
+					.columnText:not(.has-buttons) {
+						width: 70%;
+					}
+				}
+			}
+		}
+	}
+
+	&.fullwidth {
+		div.buttons {
+			margin-top: 30px;
+			margin-bottom: 30px;
+		}
+	}
+}
+
+.repeatable-features_block_icons {
+	position: relative;
+	padding: 20px;
+	.wrapper {
+		max-width: 1500px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 50px 50px;
+		background: $primary;
+	}
+	.flexwrap {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+		.imageBlock {
+			margin: 0 0;
+			width: 40%;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			padding-bottom: 25%;
+			transform: translateY(-50%);
+			img {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				object-fit: cover;
+				object-position: center;
+			}
+		}
+		.textBlock {
+			width: 70%;
+			border: 2px solid #000;
+			padding: 80px 50px;
+    	padding-left: 10vw;
+			position: relative;
+			z-index: 10;
+			.wrap {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				align-items: center;
+			}
+			.titleBlock {
+				width: 60%;
+				.h2 {
+					font-family: $font_secondary!important;
+					font-size: clamp(35px,10vw,45px);
+					font-weight: 500;
+					line-height: 1.2;
+					letter-spacing: 0.03em;
+					text-transform: uppercase;
+				}
+				div.buttons {
+					justify-content: flex-start;
+					a.button {
+						&:hover, &:focus {
+							background-color: #FFF;
+							color: #000;
+						}
+					}
+				}
+			}
+			.iconsBlock {
+				width: 40%;
+				padding-left: 30px;
+			}
+		}
+	}
+
+	.iconsBlock {
+		.info {
+			display: flex;
+			align-items: center;
+			gap: 1.5rem;
+			margin: 40px 0;
+		}
+		.icon {
+			img {
+				width: 45px;
+				height: auto;
+			}
+		}
+		.text {
+			font-size: 18px;
+			font-weight: 500;
+			line-height: 1.2;
+			text-transform: uppercase;
+			color: #000;
 		}
 	}
 }

@@ -27,6 +27,17 @@
   bottom: 0;
   width: 40%;
 }
+.acf-flexible-content .acf-field-group[data-name=two_column_content] .acf-fields {
+  display: flex;
+  flex-wrap: wrap;
+}
+.acf-flexible-content .acf-field-group[data-name=two_column_content] .acf-fields .acf-field-wysiwyg {
+  width: 50%;
+}
+.acf-flexible-content .acf-repeater .acf-field-image[data-name=icon] .image-wrap img {
+  min-height: 60px !important;
+  min-width: 60px !important;
+}
 
 .acf-field-group[data-name=topbottom_spacing] {
   width: 100%;

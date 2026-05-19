@@ -358,6 +358,3 @@ function get_flexible_parts() {
 	}
 	return $partsFiles;
 }
-
-
-
