@@ -18,11 +18,11 @@ function js_custom_init() {
       //   'menu_position'=> 5
       // ),
       array(
-        'post_type' => 'events',
-        'menu_name' => 'Events',
-        'plural'    => 'Events',
-        'single'    => 'Event',
-        'menu_icon' => 'dashicons-calendar-alt',
+        'post_type' => 'portfolio',
+        'menu_name' => 'Portfolio',
+        'plural'    => 'Portfolio',
+        'single'    => 'Portfolio',
+        'menu_icon' => 'dashicons-category',
         'menu_position'=> 5,
         'supports'  => array('title','editor','thumbnail'),
       ),
@@ -103,41 +103,12 @@ function build_taxonomies() {
 
   $post_types = array(
     array(
-      'post_type' => array('team','careers'),
-      'menu_name' => 'Divisions Taxonomy',
-      'plural'    => 'Divisions',
-      'single'    => 'Division',
-      'taxonomy'  => 'divisions'
+      'post_type' => array('portfolio'),
+      'menu_name' => 'Portfolio Category',
+      'plural'    => 'Portfolio Categories',
+      'single'    => 'Portfolio Category',
+      'taxonomy'  => 'Portfolio-categories'
     ),
-    array(
-      'post_type' => array('communities'),
-      'menu_name' => 'Community Status',
-      'plural'    => 'Community Status',
-      'single'    => 'Community Status',
-      'taxonomy'  => 'community-status'
-    ),
-    array(
-      'post_type' => array('communities'),
-      'menu_name' => 'Community Location',
-      'plural'    => 'Community Locations',
-      'single'    => 'Community Location',
-      'taxonomy'  => 'community-location'
-    ),
-    array(
-      'post_type' => array('testimonial'),
-      'menu_name' => 'Testimonial Type',
-      'plural'    => 'Testimonial Types',
-      'single'    => 'Testimonial Type',
-      'taxonomy'  => 'testimonial-types',
-      'default_term' => array('name'=>'Resident','slug'=>'resident')
-    ),
-    array(
-      'post_type' => array('activities'),
-      'menu_name' => 'Activity Types',
-      'plural'    => 'Activity Types',
-      'single'    => 'Activity Type',
-      'taxonomy'  => 'activity-type'
-    )
   );
 
 
