@@ -987,3 +987,16 @@ div.buttons {
 		width: 220px;
 	}
 }
+
+body.logged-in.admin-bar {
+	@media screen and (max-width: 1080px) {
+		.site-header .closeMenuToggle {
+			top: 50px;
+		}
+	}
+	@media screen and (max-width: 782px) {
+		.site-header .closeMenuToggle {
+			top: 60px;
+		}
+	}
+}

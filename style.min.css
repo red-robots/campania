@@ -1489,9 +1489,11 @@ div.buttons .button:hover,div.buttons .button:focus{outline:0;background-color:#
 .site-header .primary-navigation .main-navigation a.header-cta-button:hover,.site-header .primary-navigation .main-navigation a.header-cta-button:focus{background:#ece9e0}
 .site-header .primary-navigation.open{display:block;-webkit-animation-name:slideInRight;animation-name:slideInRight}
 .site-header .primary-navigation.closed{display:block;-webkit-animation-name:slideOutRight;animation-name:slideOutRight}
+body.logged-in.admin-bar .site-header .closeMenuToggle{top:50px}
 }@media screen and (max-width:960px){.repeatable-category_section .categories .imageBlock{width:50%;padding:20px}
 .site-footer ul.menu{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;gap:1.5rem}
 .site-footer ul.menu>li:after{display:none}
+}@media screen and (max-width:782px){body.logged-in.admin-bar .site-header .closeMenuToggle{top:60px}
 }@media screen and (max-width:768px){.static-hero{height:600px;margin-bottom:40px}
 .static-hero .heroImage{width:100%}
 .static-hero .heroText{top:unset;bottom:0;left:50%;width:90%;height:100%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}
