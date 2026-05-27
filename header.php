@@ -68,7 +68,6 @@ $featImg = wp_get_attachment_image_src($thumbId,'full'); ?>
         <div id="primary-navigation" class="primary-navigation">
 					<button class="closeMenuToggle"><span class="sr-only">Close Menu</span></button>
           <nav id="site-navigation" class="main-navigation" role="navigation">
-            <?php  //wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu','link_before'=>'<span>','link_after'=>'</span><i aria-hidden="true"></i>') ); ?>
             <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu','link_before'=>'<span>','link_after'=>'</span>','items_wrap'=>'<ul id="%1$s" class="%2$s">%3$s</ul>') ); ?>
             <?php if( $headCtaShow=='show' && ($hCtaButtonName && $hCtaButtonUrl) ) { ?>
             <a href="<?php echo $hCtaButtonUrl ?>" target="<?php echo $hCtaButtonTarget ?>" class="header-cta-button"><?php echo $hCtaButtonName ?></a>

@@ -149,7 +149,14 @@ jQuery(document).ready(function ($) {
     var ariaControls = $(this).attr('aria-controls');
 
     if ($(ariaControls).length) {
-      $(ariaControls).addClass('open');
+      if (isExpanded == false) {
+        $(ariaControls).addClass('open');
+      } else {
+        $(ariaControls).addClass('closed');
+        setTimeout(function () {
+          $(ariaControls).removeClass('closed open');
+        }, 600);
+      }
     }
   }); //CLOSE menu toggle
 

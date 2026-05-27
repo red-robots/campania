@@ -78,7 +78,14 @@ jQuery(document).ready(function($) {
 		$(this).attr('aria-expanded', !isExpanded);
 		let ariaControls = $(this).attr('aria-controls');
 		if( $(ariaControls).length ) {
-			$(ariaControls).addClass('open');
+			if(isExpanded==false) {
+				$(ariaControls).addClass('open');
+			} else {
+				$(ariaControls).addClass('closed');
+				setTimeout(function(){
+					$(ariaControls).removeClass('closed open');
+				},600);
+			}
 		}
 	});
 

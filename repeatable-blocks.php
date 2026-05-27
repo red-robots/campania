@@ -59,6 +59,31 @@ jQuery(document).ready(function($){
       });
     });
   }
+
+  moveElementsOnMobile();
+  $(window).on('resize', function(){
+    moveElementsOnMobile();
+  });
+  function moveElementsOnMobile() {
+    if( $('.repeatable-features_block_icons').length ) {
+      $('.repeatable-features_block_icons').each(function(){
+        if( $(this).find('div.buttons').length && $(this).find('.iconsBlock').length ) {
+          const titleDiv = $(this).find('.titleBlock');
+          const buttons = $(this).find('div.buttons');
+          const icons = $(this).find('.iconsBlock');
+          if( $(window).width() <= 1250 ) {
+            buttons.addClass('moved');
+            buttons.insertAfter(icons);
+          } else {
+            if( buttons.hasClass('moved') ) {
+              buttons.appendTo(titleDiv);
+              buttons.removeClass('moved');
+            }
+          }
+        }
+      });
+    }
+  }
 });
 
 
