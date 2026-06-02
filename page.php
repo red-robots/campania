@@ -12,8 +12,8 @@
  * @package bellaworks
  */
 get_header();
-$repeatable_blocks = get_field('repeatable_blocks');
-$flexible_content_internal = get_field('flexible_content_internal');
+$repeatable_blocks = get_field('flexible_content');
+$flexible_content_internal = get_field('subpage_flexible_content');
 ?>
 <?php if($flexible_content_internal) { ?>
 
