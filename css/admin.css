@@ -38,6 +38,19 @@
   min-height: 60px !important;
   min-width: 60px !important;
 }
+.acf-flexible-content .acf-field-true-false {
+  position: relative;
+}
+.acf-flexible-content .acf-field-true-false .acf-label {
+  margin-bottom: 0 !important;
+  padding-left: 30px;
+}
+.acf-flexible-content .acf-field-true-false .acf-input {
+  display: inline-block;
+  position: absolute;
+  top: 15px;
+  left: 20px;
+}
 
 .acf-field-group[data-name=topbottom_spacing] {
   width: 100%;

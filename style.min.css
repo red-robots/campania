@@ -1441,7 +1441,7 @@ div.buttons .button:hover,div.buttons .button:focus{outline:0;background-color:#
 .internalHero .heroText h1{font-size:35px;font-weight:500;letter-spacing:.08em;line-height:1.2;text-transform:uppercase;color:#000;margin:0}
 .repeatable-regular_text_content{padding-top:50px;padding-bottom:50px}
 .repeatable-regular_text_content.two-column-text-content .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin:0 -20px}
-.repeatable-regular_text_content.two-column-text-content .flexwrap .fcol{width:50%;padding:20px}
+.repeatable-regular_text_content.two-column-text-content .flexwrap .fcol{width:100%;padding:20px}
 .repeatable-regular_text_content.two-column-text-content .flexwrap .fcol h3{font-size:16px;font-weight:400;text-transform:uppercase;letter-spacing:.05em;line-height:1.6;margin:0 0 10px;color:#000}
 .repeatable-horizontal_line{padding-top:20px;padding-bottom:20px}
 .repeatable-horizontal_line .divider{width:100%;border-top:1px solid #000}
@@ -1452,14 +1452,24 @@ div.buttons .button:hover,div.buttons .button:focus{outline:0;background-color:#
 .repeatable-block_icons .inside .wrap:has(.top-text):has(.iconList) .top-text{margin-bottom:20px}
 .repeatable-block_icons h2{margin:0;text-transform:uppercase}
 .repeatable-block_icons .iconsList{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
-.repeatable-block_icons .iconsList .info{width:50%;padding:40px}
-.repeatable-block_icons .iconsList .info .inner{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;gap:2vw}
+.repeatable-block_icons .iconsList .info{width:100%;padding:20px 40px}
+.repeatable-block_icons .iconsList .info .inner{display:-webkit-box;display:-ms-flexbox;display:flex;gap:2vw}
 .repeatable-block_icons .iconsList .info div.icon img{width:50px;height:auto}
 .repeatable-block_icons .iconsList .info .text h2,.repeatable-block_icons .iconsList .info .text h3,.repeatable-block_icons .iconsList .info .text p{margin-top:0}
 .repeatable-callout{padding-top:20px;padding-bottom:20px}
 .repeatable-callout .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;gap:1rem}
 .repeatable-callout .flexwrap h2{margin:0;text-transform:uppercase;letter-spacing:.06em}
 .repeatable-callout .flexwrap div.buttons{margin-top:0}
+.repeatable-overlapping_image_and_title{margin:40px 0}
+.repeatable-overlapping_image_and_title .flexwrap{position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}
+.repeatable-overlapping_image_and_title .flexwrap .textCol{width:100%;position:relative;z-index:5;background:#000;color:#fff;padding:50px 30px;text-align:center}
+.repeatable-overlapping_image_and_title .flexwrap .textCol h2{margin:0;text-transform:uppercase;letter-spacing:.05em}
+.repeatable-overlapping_image_and_title .flexwrap .textCol p:last-child{margin-bottom:0}
+.repeatable-overlapping_image_and_title .flexwrap .imageCol{width:100%;position:relative;padding-bottom:60%}
+.repeatable-overlapping_image_and_title .flexwrap .imageCol div.image{position:absolute;top:0;left:0;width:100%;height:100%;background-size:cover;background-position:center;background-repeat:no-repeat}
+.repeatable.noMarginBottom{margin-bottom:0 !important;padding-bottom:0 !important}
+.repeatable.noMarginTop{margin-top:0 !important;padding-top:0 !important}
+.repeatable.noMarginTop.two-column-text-content{padding-top:20px !important}
 .site-footer{background:#ece9e0;padding:80px 20px;margin-top:50px;position:relative;overflow:hidden}
 .site-footer .iconsList{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;gap:2rem}
 .site-footer .iconsList .info{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;gap:1.5rem}
@@ -1487,9 +1497,16 @@ div.buttons .button:hover,div.buttons .button:focus{outline:0;background-color:#
 .repeatable-text_content .flexwrap:has(.columnText1):has(.columnText2):has(.has-buttons-1) .columnText.has-buttons{width:30%}
 .repeatable-text_content .flexwrap:has(.columnText1):has(.columnText2):has(.has-buttons-1) .columnText:not(.has-buttons){width:70%}
 }@media(min-width:1024px){.repeatable-text_content .wrapper{padding-top:70px;padding-bottom:70px}
+.repeatable-regular_text_content.two-column-text-content .flexwrap .fcol{width:50%}
 .repeatable-block_icons .inside .wrap{padding-left:40px;padding-right:40px}
+.repeatable-block_icons .iconsList .info{width:50%;adding:40px}
+.repeatable-block_icons .iconsList .info .inner{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
+.repeatable-overlapping_image_and_title .flexwrap{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}
+.repeatable-overlapping_image_and_title .flexwrap .textCol{width:60%;padding:50px 50px;position:absolute;top:50%;left:0;-webkit-transform:translateY(-50%);transform:translateY(-50%);text-align:left}
+.repeatable-overlapping_image_and_title .flexwrap .imageCol{width:65%;padding-bottom:30%}
 }@media screen and (max-width:1080px)and (min-width:960px){.site-header .menu-toggle{display:none}
 }@media screen and (min-width:1381px){.slider-hero .slideshow-wrapper{height:85vh}
+}@media(min-width:1500px){.repeatable-overlapping_image_and_title .flexwrap .textCol{padding:80px 150px}
 }@media screen and (max-width:1250px){.repeatable-features_block_icons .wrapper{position:relative}
 .repeatable-features_block_icons .wrapper:before{content:"";display:block;width:100%;height:15vw;background:#fff;position:absolute;top:0;left:0}
 .repeatable-features_block_icons .flexwrap{position:relative;z-index:5}
@@ -1532,6 +1549,9 @@ body.logged-in.admin-bar .site-header .closeMenuToggle{top:50px}
 .static-hero .heroText .text{padding:30px 30px !important;-webkit-transform:translateY(50px);transform:translateY(50px)}
 .slider-hero .slideshow-wrapper{height:600px;margin-bottom:40px}
 .slider-hero .slideshow .swiper-wrapper .swiper-slide .slideImage{width:100%}
+.repeatable-regular_text_content.two-column-text-content .flexwrap .fcol.col1{padding-bottom:0}
+.repeatable-callout .flexwrap{text-align:center}
+.repeatable-callout div.buttons{width:100%;text-align:center}
 .site-header .site-logo{width:250px}
 .site-header .menu-toggle{right:25px}
 }@media screen and (max-width:500px){.repeatable-features_block_icons .wrapper{padding:30px}

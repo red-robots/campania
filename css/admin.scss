@@ -53,6 +53,21 @@
 			}
 		}
 	}
+
+	.acf-field-true-false {
+		position: relative;
+		.acf-label {
+			margin-bottom: 0 !important;
+    	padding-left: 30px;
+		}
+		.acf-input {
+			display: inline-block;
+			position: absolute;
+			top: 15px;
+    	left: 20px;
+		}	
+	}
+
 }
 
 

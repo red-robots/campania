@@ -739,8 +739,16 @@ div.buttons {
 			flex-wrap: wrap;
 			margin: 0 -20px;
 			.fcol {
-				width: 50%;
+				width: 100%;
 				padding: 20px;
+				@include mid {
+					width: 50%;
+				}
+				@include max(768px) {
+					&.col1 {
+						padding-bottom: 0;
+					}
+				}
 				h3 {
 					font-size: 16px;
 					font-weight: 400;
@@ -799,12 +807,18 @@ div.buttons {
 		flex-wrap: wrap;
 		justify-content: center;
 		.info {
-			width: 50%;
-			padding: 40px;
+			width: 100%;
+			padding: 20px 40px;
+			@include mid {
+				width: 50%;
+				adding: 40px;
+			}
 			.inner {
 				display: flex;
-				justify-content: space-between;
 				gap: 2vw;
+				@include mid {
+					justify-content: space-between;
+				}
 			}
 			div.icon {
 				img {
@@ -838,8 +852,88 @@ div.buttons {
 			margin-top: 0;
 		}
 	}
+	@include max(768px) {
+		.flexwrap {
+			text-align: center;
+		}
+		div.buttons {
+			width: 100%;
+			text-align: center;
+		}
+	}
 }
 
+.repeatable-overlapping_image_and_title {
+	margin: 40px 0;
+	.flexwrap {
+		position: relative;
+		display: flex;
+		flex-wrap: wrap;
+		@include mid {
+			justify-content: flex-end;
+		}
+		.textCol {
+			width: 100%;
+			position: relative;
+			z-index: 5;
+			background: #000;
+			color: #FFF;
+			padding: 50px 30px;
+			text-align: center;
+			@include mid {
+				width: 60%;
+				padding: 50px 50px;
+				position: absolute;
+				top: 50%;
+				left: 0;
+				transform: translateY(-50%);
+				text-align: left;
+			}
+			@include xxl {
+				padding: 80px 150px;
+			}
+			h2 {
+				margin: 0 0;
+				text-transform: uppercase;
+				letter-spacing: 0.05em;
+			}
+			p:last-child {
+				margin-bottom: 0;
+			}
+		}
+		.imageCol {
+			width: 100%;
+			position: relative;
+			padding-bottom: 60%;
+			@include mid {
+				width: 65%;
+				padding-bottom: 30%;
+			}
+			div.image {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+		}
+	}
+}
+
+.repeatable.noMarginBottom {
+	margin-bottom: 0!important;
+	padding-bottom: 0!important;
+}
+.repeatable.noMarginTop {
+	margin-top: 0!important;
+	padding-top: 0!important;
+	&.two-column-text-content {
+		padding-top: 20px!important;
+	}
+}
 
 .site-footer {
 	background: $primary;
