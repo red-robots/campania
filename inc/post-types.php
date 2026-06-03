@@ -107,7 +107,7 @@ function build_taxonomies() {
       'menu_name' => 'Portfolio Category',
       'plural'    => 'Portfolio Categories',
       'single'    => 'Portfolio Category',
-      'taxonomy'  => 'Portfolio-categories'
+      'taxonomy'  => 'portfolio-categories'
     ),
   );
 

@@ -6,9 +6,11 @@
 get_header(); ?>
 
 <div id="primary" class="content-area page-default-template content-sitemap">
-  <main id="main" class="site-main wrapper-small" role="main">
+  <main id="main" class="site-main wrapper" role="main">
     <?php while ( have_posts() ) : the_post(); ?>
       
+      <h1 class="page-title"><span><?php the_title(); ?></span></h1>
+
       <?php if ( get_the_content() ) { ?>
       <section class="entry-content"><?php the_content(); ?></section>
       <?php } ?>

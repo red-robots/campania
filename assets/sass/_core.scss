@@ -371,14 +371,12 @@ div.buttons {
 	}
 }
 
-.repeatable {
-	.wrapper {
-		max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-		padding-left: 30px;
-		padding-right: 30px;
-	}
+.wrapper {
+	max-width: 1200px;
+	width: 100%;
+	margin: 0 auto;
+	padding-left: 30px;
+	padding-right: 30px;
 }
 
 .repeatable-text_content {
@@ -932,6 +930,119 @@ div.buttons {
 	padding-top: 0!important;
 	&.two-column-text-content {
 		padding-top: 20px!important;
+	}
+}
+
+.sitemap-links {
+	display: flex;
+	justify-content: center;
+	ul {
+		display: block;
+		text-align: left;
+		column-count: 2;
+		column-gap: 5rem;
+		a {
+			display: inline-block;
+			color: #000;
+			text-decoration: underline;
+			text-decoration-thickness: 1px;
+			text-underline-offset: 3px;
+			transition: all ease .3s;
+			&:hover, &:focus {
+				transform: translateY(-2px);
+			}
+		}
+	}
+}
+
+.error404 {
+	.site-content {
+		padding-top: 180px;
+	}
+}
+
+.content-sitemap {
+	padding-top: 180px;
+	text-align: center;
+}
+
+.page404 {
+	.entry-title {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		text-align: center;
+		margin-top: 40px;
+		.small-title {
+			font-size: 30px;
+		}
+		h1 {
+			text-transform: uppercase;
+			margin-top: 0;
+		}
+	}
+	.innerText {
+		text-align: center;
+	}
+}
+
+.categories {
+	padding: 30px 30px;
+	ul {
+		margin: 0 0;
+		padding: 0 0;
+		list-style: none;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 1rem;
+		> li {
+			position: relative;
+			&:after {
+				content:"";
+				display: block;
+				width: 1px;
+				height: 18px;
+				background: #000;
+				position: absolute;
+				top: 50%;
+				right: -8px;
+				transform: translateY(-50%);
+			}
+		}
+		> li:last-child:after {
+			display: none;
+		}
+		a {
+			display: inline-block;
+			font-size: 16px;
+			line-height: 1.2;
+			color: #000;
+			text-transform: uppercase;
+			letter-spacing: 0.03em;
+			text-decoration: none;
+			padding: 10px 10px 5px;
+			span {
+				display: inline-block;
+				position: relative;
+				&:after {
+					content:"";
+					display: block;
+					width: 0;
+					height: 1px;
+					background: #000;
+					position: absolute;
+					left: 0;
+					bottom: 0;
+					transition: all ease .3s;
+				}
+			}
+			&:hover, &:focus {
+				span:after {
+					width: 100%;
+				}
+			}
+		}
 	}
 }
 
