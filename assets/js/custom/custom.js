@@ -33,16 +33,16 @@ jQuery(document).ready(function($) {
 	// });
 
 	// Select the grid element
-	var grid = document.querySelector('.masonry-images');
-	// Initialize Masonry ONLY after images have loaded
-	imagesLoaded(grid, function() {
-		var msnry = new Masonry(grid, {
-			itemSelector: '.masonry-item',
-			columnWidth: '.masonry-item',
-			percentPosition: true,
-			gutter: 0 // Space between items
-		});
-	});
+	// var grid = document.querySelector('.masonry-images');
+	// // Initialize Masonry ONLY after images have loaded
+	// imagesLoaded(grid, function() {
+	// 	var msnry = new Masonry(grid, {
+	// 		itemSelector: '.masonry-item',
+	// 		columnWidth: '.masonry-item',
+	// 		percentPosition: true,
+	// 		gutter: 0 // Space between items
+	// 	});
+	// });
 
   const swiperElements = document.querySelectorAll('.swiper');
   if(swiperElements.length) {

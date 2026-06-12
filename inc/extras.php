@@ -19,6 +19,8 @@
 // $fdate = $date->format('Y-m-d H:i:s');
 // define('WP_CURRENT_TIME', $fdate);
 // define('THEMEURI',get_template_directory_uri() . '/');
+global $portfolio_per_page;
+$portfolio_per_page = 3;
 
 function bellaworks_body_classes( $classes ) {
     // Adds a class of group-blog to blogs with more than 1 published author.
@@ -358,3 +360,68 @@ function get_flexible_parts() {
 	}
 	return $partsFiles;
 }
+
+function theme_enqueue_masonry_load_more() {
+	global $portfolio_per_page;
+	// Enqueue Masonry (WordPress includes this by default)
+	wp_enqueue_script('masonry');
+
+	// Register and enqueue your custom gallery script
+	wp_enqueue_script('gallery-load-more', get_template_directory_uri() . '/assets/js/gallery.js', array('jquery', 'masonry'), '1.0', true);
+
+	// Initial query to find total pages (for the same featured image query)
+	$initial_query = new WP_Query(array(
+		'post_type'      => 'portfolio',
+		'posts_per_page' => $portfolio_per_page, // Match your initial display count
+		'post_status'    => 'publish',
+		'meta_query'     => array(
+				array('key' => '_thumbnail_id', 'compare' => 'EXISTS')
+		)
+	));
+
+	//Send variables to gallery.js
+	wp_localize_script('gallery-load-more', 'gallery_params', array(
+		'ajaxurl'      => admin_url('admin-ajax.php'),
+		'current_page' => 1,
+		'max_page'     => $initial_query->max_num_pages
+	));
+}
+add_action('wp_enqueue_scripts', 'theme_enqueue_masonry_load_more');
+
+
+function load_more_featured_posts() {
+    global $portfolio_per_page;
+		$result = '';
+    $page = isset($_POST['page']) ? intval($_POST['page']) : 1;
+
+    $args = array(
+			'post_type'      => 'portfolio',         // Fetch standard posts (change to 'any' or custom post type if needed)
+			'posts_per_page' => $portfolio_per_page,          
+			'paged'          => $page,   // Number of posts to display
+			'post_status'    => 'publish',      // Only get published posts
+			'meta_query'     => array(
+				array(
+					'key'     => '_thumbnail_id', // This key only exists if a featured image is set
+					'compare' => 'EXISTS',        // Ensures the key is present in the database
+				),
+			),
+    );
+
+    $query = new WP_Query($args);
+		ob_start();
+    if ($query->have_posts()) {
+			while ($query->have_posts()) { $query->the_post(); 
+				$imageUrl = get_the_post_thumbnail_url(get_the_ID());
+				include( locate_template('parts/gallery-item.php') );
+			}
+			wp_reset_postdata();
+    }
+		$result = ob_get_contents();
+		ob_get_clean();
+		ob_end_flush();
+
+		echo $result;
+    wp_die(); // Required to terminate immediately and return a proper response
+}
+add_action('wp_ajax_load_more_featured_posts', 'load_more_featured_posts');
+add_action('wp_ajax_nopriv_load_more_featured_posts', 'load_more_featured_posts');

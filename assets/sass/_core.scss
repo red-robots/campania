@@ -1046,6 +1046,48 @@ div.buttons {
 	}
 }
 
+.gallery-container{
+	max-width: 1400px;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	.grid-sizer {
+		display: none;
+	}
+	.masonry-grid {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		width: 100%;
+		&:after {
+			content: '';
+			display: block;
+			clear: both;
+		}
+	}
+	.grid-item {
+		margin: 0 0;
+		padding: 15px;
+	}
+	.grid-sizer, 
+	.grid-item {
+		width: 33.333%; /* 3 columns with roughly 3% total gap space */
+	}
+	.post-thumbnail,
+	.post-thumbnail a {
+		display: block;
+		width: 100%;
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+	&.masonry-active .grid-sizer {
+		display: block;
+	}
+}
+
 .site-footer {
 	background: $primary;
 	padding: 80px 20px;
