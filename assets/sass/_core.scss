@@ -1148,7 +1148,7 @@ div.buttons {
 	/* The Box Matching the Image Spec */
 	.info-box {
 		background-color: #EFECE6; /* Matching beige container */
-		padding: 45px 30px;
+		padding: 50px 40px;
 		width: 100%;
 		box-sizing: border-box;
 		letter-spacing: 2px;
@@ -1188,13 +1188,15 @@ div.buttons {
 	}
 	.custom-nav-wrapper {
 		display: flex;
-		justify-content: center;
+		// justify-content: center;
 		width: 100%;
+		position: relative;
+		left: 40px;
 	}
 	.custom-nav {
 		display: flex;
 		margin-top: -15px;
-		gap: 2px;
+		gap: 15px;
 	}
 	.nav-btn {
 		position: relative;
