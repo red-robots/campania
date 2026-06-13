@@ -67,5 +67,60 @@ jQuery(document).ready(function($) {
 			}
 		});
 	});
+
+
+	// 1. Initialize Fancybox
+	$('[data-fancybox="gallery"]').fancybox({
+		clickContent: false, 
+		buttons: [],         
+		smallBtn: true,      
+		toolbar: false,
+		animationEffect: "fade",
+		transitionEffect: "fade",
+		loop: false, // Ensure it stops at boundaries instead of looping
+		
+		// This runs every time a popup item transitions and loads
+		afterShow: function(instance, current) {
+			var currentIndex = current.index;            // Current item number (starts at 0)
+			var totalItems = instance.group.length;       // Total number of items in gallery
+			
+			// Look for the navigation buttons inside the currently active popup
+			var $currentPopup = current.$content;
+			var $prevBtn = $currentPopup.find('.prev-btn');
+			var $nextBtn = $currentPopup.find('.next-btn');
+
+			// Reset states first
+			$prevBtn.prop('disabled', false).css('opacity', '1');
+			$nextBtn.prop('disabled', false).css('opacity', '1');
+
+			// If it's the very first item, disable the previous button
+			if (currentIndex === 0) {
+					$prevBtn.prop('disabled', true).css('opacity', '0.3');
+			}
+
+			// If it's the very last item, disable the next button
+			if (currentIndex === totalItems - 1) {
+					$nextBtn.prop('disabled', true).css('opacity', '0.3');
+			}
+		}
+	});
+
+	// 2. Safe Previous Button Handler
+	$(document).on('click', '.prev-btn', function(e) {
+		e.preventDefault();
+		var instance = $.fancybox.getInstance();
+		if (instance) {
+			instance.previous();
+		}
+	});
+
+	// 3. Safe Next Button Handler
+	$(document).on('click', '.next-btn', function(e) {
+		e.preventDefault();
+		var instance = $.fancybox.getInstance();
+		if (instance) {
+			instance.next();
+		}
+	});
 	
 });

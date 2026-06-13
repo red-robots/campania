@@ -48,6 +48,12 @@ function bellaworks_scripts() {
   // );
 
   wp_enqueue_script(
+    'fancybox',
+    'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js',
+    array(), '3.5.7', true
+  );
+
+  wp_enqueue_script(
     'bellaworks-custom',
     get_template_directory_uri() . '/assets/js/custom/custom.js',
     array(), '20260218', true

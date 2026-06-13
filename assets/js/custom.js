@@ -74,16 +74,17 @@
  *  Date Modified: 03.31.2026
  */
 jQuery(document).ready(function ($) {
-  if ($('.popup-image').length) {
-    $('.popup-image').fancybox({
-      //buttons : ['close','thumbs','fullScreen'],
-      buttons: ['fullScreen', 'close'],
-      protect: true,
-      loop: false,
-      hash: false,
-      animationEffect: 'fade'
-    });
-  } // $('.grid').masonry({
+  // if( $('.popup-image').length ) {
+  // 	$('.popup-image').fancybox({
+  // 		//buttons : ['close','thumbs','fullScreen'],
+  // 		buttons : ['fullScreen','close'],
+  // 		protect: true,
+  // 		loop: false,
+  // 		hash : false,
+  // 		animationEffect: 'fade'
+  // 	});
+  // }
+  // $('.grid').masonry({
   // 	itemSelector: '.grid-item',
   // 	columnWidth: 200
   // });
@@ -108,8 +109,6 @@ jQuery(document).ready(function ($) {
   // 		gutter: 0 // Space between items
   // 	});
   // });
-
-
   var swiperElements = document.querySelectorAll('.swiper');
 
   if (swiperElements.length) {

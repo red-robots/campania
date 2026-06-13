@@ -20,7 +20,9 @@
 // define('WP_CURRENT_TIME', $fdate);
 // define('THEMEURI',get_template_directory_uri() . '/');
 global $portfolio_per_page;
-$portfolio_per_page = 3;
+$perpageOption = get_field('portfolio_perpage','option');
+$portfolio_per_page = ($perpageOption) ? $perpageOption : '6';
+
 
 function bellaworks_body_classes( $classes ) {
     // Adds a class of group-blog to blogs with more than 1 published author.

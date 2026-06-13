@@ -5,16 +5,16 @@
  */
 jQuery(document).ready(function($) {
 
-	if( $('.popup-image').length ) {
-		$('.popup-image').fancybox({
-			//buttons : ['close','thumbs','fullScreen'],
-			buttons : ['fullScreen','close'],
-			protect: true,
-			loop: false,
-			hash : false,
-			animationEffect: 'fade'
-		});
-	}
+	// if( $('.popup-image').length ) {
+	// 	$('.popup-image').fancybox({
+	// 		//buttons : ['close','thumbs','fullScreen'],
+	// 		buttons : ['fullScreen','close'],
+	// 		protect: true,
+	// 		loop: false,
+	// 		hash : false,
+	// 		animationEffect: 'fade'
+	// 	});
+	// }
 
 	// $('.grid').masonry({
 	// 	itemSelector: '.grid-item',

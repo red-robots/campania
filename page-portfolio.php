@@ -3,9 +3,12 @@
  * Template Name: Portfolio
  */
 get_header();
+$paged = ( get_query_var( 'pg' ) ) ? absint( get_query_var( 'pg' ) ) : 1;
 $repeatable_blocks = get_field('flexible_content');
 $flexible_content_internal = get_field('subpage_flexible_content');
 $taxonomy = 'portfolio-categories';
+$perpageOption = get_field('portfolio_perpage','option');
+$perpage = ($perpageOption) ? $perpageOption : '6';
 ?>
 
 <div id="primary" class="content-area">
@@ -38,8 +41,9 @@ $taxonomy = 'portfolio-categories';
     <?php
       $args = array(
         'post_type'      => 'portfolio',         // Fetch standard posts (change to 'any' or custom post type if needed)
-        'posts_per_page' => 3,             // Number of posts to display
-        'post_status'    => 'publish',      // Only get published posts
+        'posts_per_page' => $perpage,             // Number of posts to display
+        'paged'          => $paged, 
+        'post_status'    => 'publish',      // Only get published posts 
         'meta_query'     => array(
             array(
                 'key'     => '_thumbnail_id', // This key only exists if a featured image is set

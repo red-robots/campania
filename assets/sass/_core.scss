@@ -1052,6 +1052,23 @@ div.buttons {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
+	#load-more-btn {
+		display: inline-block;
+		appearance: none;
+		border: none;
+		border-radius: 0;
+		font-size: 16px;
+    line-height: 1.1;
+		text-transform: uppercase;
+		color: #FFF;
+		padding: 14px 30px 10px;
+		background-color: #000;
+		transition: all ease .3s;
+		&:hover, &:focus {
+			color: #000;
+			background-color: $secondary;
+		}
+	}
 	.grid-sizer {
 		display: none;
 	}
@@ -1085,6 +1102,151 @@ div.buttons {
 	}
 	&.masonry-active .grid-sizer {
 		display: block;
+	}
+}
+
+.custom-fancybox-popup {
+	padding: 0 !important;
+	background: #ffffff !important;
+	max-width: 850px;
+	width: 100%;
+	overflow: visible !important;
+	.popup-container {
+		display: flex;
+		align-items: center;
+		padding: 40px;
+		background-color: #ffffff;
+		position: relative;
+	}
+
+	/* Left Side (Image Container) */
+	.popup-image-side {
+		flex: 1.2;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.popup-image-side img {
+		max-width: 100%;
+		max-height: 450px;
+		height: auto;
+		display: block;
+		box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+	}
+
+	/* Right Side (Text & Navigation Area) */
+	.popup-info-side {
+		flex: 0.8;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		padding-left: 30px;
+		margin-right: -6vw;
+	}
+
+	/* The Box Matching the Image Spec */
+	.info-box {
+		background-color: #EFECE6; /* Matching beige container */
+		padding: 45px 30px;
+		width: 100%;
+		box-sizing: border-box;
+		letter-spacing: 2px;
+		.category {
+			text-transform: uppercase;
+			font-family: $font_secondary;
+			font-size: 20px;
+			line-height: 1.2;
+			letter-spacing: 0.08em;
+			margin-bottom: 10px;
+		}
+		.description {
+			p {
+				font-size: 15px;
+				text-transform: uppercase;
+				margin-top: 0;
+				margin-bottom: 5px;
+			}
+			p:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	.info-box .title {
+		font-size: 16px;
+		color: #000;
+		margin: 0 0 20px 0;
+		font-weight: 400;
+		line-height: 1.4;
+	}
+
+	.info-box .location-date {
+		font-size: 11px;
+		color: #666;
+		margin: 0;
+	}
+	.custom-nav-wrapper {
+		display: flex;
+		justify-content: center;
+		width: 100%;
+	}
+	.custom-nav {
+		display: flex;
+		margin-top: -15px;
+		gap: 2px;
+	}
+	.nav-btn {
+		position: relative;
+		background-color: #000000;
+		color: #ffffff;
+		border: none;
+		width: 40px;
+		height: 40px;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 10px;
+		transition: background-color 0.2s;
+		&:hover, &:focus {
+			background-color: #333333;
+		}
+		&:before {
+			content:"";
+			display: block;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			background-size: 40%;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-image: url('images/gallery-nav-arrow.svg');
+		}
+		&.next-btn:before {
+			left: 2px;
+		}
+		&.prev-btn:before {
+			left: -1px;
+			transform: scaleX(-1);
+		}
+		&[disabled] {
+			opacity: 1!important;
+			background-color: #a4a4a4;
+		}
+	}
+	.fancybox-close-small {
+		color: #000 !important;
+		padding: 15px !important;
+	}
+}
+
+.custom-fancybox-popup .fancybox-button {
+	right: 8px!important;
+  top:  8px!important;
+	svg {
+		transform: scale(2.5);
 	}
 }
 
