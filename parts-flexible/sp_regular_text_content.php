@@ -35,6 +35,49 @@
         </div>
       </div>
     </div>
+  <?php } else if($content_layout == 'two_column_box') { 
+    $twocolumnwithbox = get_sub_field('twocolumnwithbox');
+    $boxed = ( isset($twocolumnwithbox['boxed_content']) && $twocolumnwithbox['boxed_content'] ) ? $twocolumnwithbox['boxed_content'] : '';
+    $details = ( isset($twocolumnwithbox['details']) && $twocolumnwithbox['details'] ) ? $twocolumnwithbox['details'] : '';
+    $boxPosition = ( isset($twocolumnwithbox['boxed_content_position']) && $twocolumnwithbox['boxed_content_position'] ) ? $twocolumnwithbox['boxed_content_position'] : 'left';
+
+    if($boxed || $details) { ?>
+      <div data-group="<?php echo get_row_layout() ?>" id="repeatable-<?php echo get_row_layout() ?>--<?php echo $i ?>" class="repeatable repeatable-<?php echo get_row_layout() ?><?php echo $marginTop.$marginBottom ?> twocolumnwithbox">
+        <div class="wrapper">
+          <div class="flexwrap box--<?php echo $boxPosition?>">
+            <?php if($boxPosition=='left') { ?>
+              
+              <?php if ($boxed) { ?>
+                <div class="fcol borderedBox p-left">
+                  <div class="text"><?php echo anti_email_spam($boxed) ?></div>
+                </div>
+              <?php } ?>
+              <?php if ($details) { ?>
+                <div class="fcol detailsBlock">
+                  <div class="text"><?php echo anti_email_spam($details) ?></div>
+                </div>
+              <?php } ?>
+
+            <?php } else { ?>
+              
+              <?php if ($details) { ?>
+                <div class="fcol detailsBlock">
+                  <div class="text"><?php echo anti_email_spam($details) ?></div>
+                </div>
+              <?php } ?>
+              
+              <?php if ($boxed) { ?>
+                <div class="fcol borderedBox p-right">
+                  <div class="text"><?php echo anti_email_spam($boxed) ?></div>
+                </div>
+              <?php } ?>
+
+            <?php } ?>
+
+          </div>
+        </div>
+      </div>
+    <?php } ?>
   <?php } ?>
 
   

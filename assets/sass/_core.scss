@@ -759,6 +759,61 @@ div.buttons {
 			}
 		}
 	}
+
+	&.twocolumnwithbox {
+		.wrapper {
+			max-width: 100%;
+			width: 95vw;
+			margin: 0 auto;
+			@include tab {
+				width: 90vw;
+			}
+		}
+		.flexwrap {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+		}
+		.borderedBox {
+			width: 100%;
+			div.text {
+				border: 1px solid #000;
+				padding: 30px;
+				@include mid {
+					padding: 50px;
+				}
+				p {
+					font-family: $font_secondary!important;
+					line-height: 1.5;
+					letter-spacing: 0.1em;
+				}
+			}
+			&.p-left {
+				margin-bottom: 20px;
+			}
+			&.p-right {
+				margin-top: 20px;
+			}
+			@include tab {
+				width: 40%;
+				&.p-left {
+					margin-bottom: 0;
+					padding-right: 5vw;
+				}
+				&.p-right {
+					margin-top: 0;
+					padding-left: 5vw;
+				}
+			}
+		}
+		.detailsBlock {
+			width: 100%;
+			@include tab {
+				width: 60%;
+			}
+		}
+	}
 }
 
 .repeatable-horizontal_line {
@@ -1102,6 +1157,20 @@ div.buttons {
 	}
 	&.masonry-active .grid-sizer {
 		display: block;
+	}
+
+	@include max(860px) {
+		padding-left: 20px;
+		padding-right: 20px;
+		.masonry-grid .grid-item {
+			width: 50%;
+		}
+	}
+
+	@include max(500px) {
+		.masonry-grid .grid-item {
+			width: 100%;
+		}
 	}
 }
 

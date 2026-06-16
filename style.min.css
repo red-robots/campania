@@ -1443,6 +1443,14 @@ div.buttons .button:hover,div.buttons .button:focus{outline:0;background-color:#
 .repeatable-regular_text_content.two-column-text-content .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin:0 -20px}
 .repeatable-regular_text_content.two-column-text-content .flexwrap .fcol{width:100%;padding:20px}
 .repeatable-regular_text_content.two-column-text-content .flexwrap .fcol h3{font-size:16px;font-weight:400;text-transform:uppercase;letter-spacing:.05em;line-height:1.6;margin:0 0 10px;color:#000}
+.repeatable-regular_text_content.twocolumnwithbox .wrapper{max-width:100%;width:95vw;margin:0 auto}
+.repeatable-regular_text_content.twocolumnwithbox .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+.repeatable-regular_text_content.twocolumnwithbox .borderedBox{width:100%}
+.repeatable-regular_text_content.twocolumnwithbox .borderedBox div.text{border:1px solid #000;padding:30px}
+.repeatable-regular_text_content.twocolumnwithbox .borderedBox div.text p{font-family:"Zalando Sans Expanded",sans-serif !important;line-height:1.5;letter-spacing:.1em}
+.repeatable-regular_text_content.twocolumnwithbox .borderedBox.p-left{margin-bottom:20px}
+.repeatable-regular_text_content.twocolumnwithbox .borderedBox.p-right{margin-top:20px}
+.repeatable-regular_text_content.twocolumnwithbox .detailsBlock{width:100%}
 .repeatable-horizontal_line{padding-top:20px;padding-bottom:20px}
 .repeatable-horizontal_line .divider{width:100%;border-top:1px solid #000}
 .repeatable-block_icons{padding-top:30px;padding-bottom:30px}
@@ -1548,8 +1556,14 @@ div.buttons .button:hover,div.buttons .button:focus{outline:0;background-color:#
 .repeatable-text_content .flexwrap:has(.columnText1):has(.columnText2) .columnText:not(.has-buttons){width:60%}
 .repeatable-text_content .flexwrap:has(.columnText1):has(.columnText2):has(.has-buttons-1) .columnText.has-buttons{width:30%}
 .repeatable-text_content .flexwrap:has(.columnText1):has(.columnText2):has(.has-buttons-1) .columnText:not(.has-buttons){width:70%}
+.repeatable-regular_text_content.twocolumnwithbox .wrapper{width:90vw}
+.repeatable-regular_text_content.twocolumnwithbox .borderedBox{width:40%}
+.repeatable-regular_text_content.twocolumnwithbox .borderedBox.p-left{margin-bottom:0;padding-right:5vw}
+.repeatable-regular_text_content.twocolumnwithbox .borderedBox.p-right{margin-top:0;padding-left:5vw}
+.repeatable-regular_text_content.twocolumnwithbox .detailsBlock{width:60%}
 }@media(min-width:1024px){.repeatable-text_content .wrapper{padding-top:70px;padding-bottom:70px}
 .repeatable-regular_text_content.two-column-text-content .flexwrap .fcol{width:50%}
+.repeatable-regular_text_content.twocolumnwithbox .borderedBox div.text{padding:50px}
 .repeatable-block_icons .inside .wrap{padding-left:40px;padding-right:40px}
 .repeatable-block_icons .iconsList .info{width:50%;adding:40px}
 .repeatable-block_icons .iconsList .info .inner{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
@@ -1594,6 +1608,8 @@ body.logged-in.admin-bar .site-header .closeMenuToggle{top:50px}
 }@media screen and (max-width:960px){.repeatable-category_section .categories .imageBlock{width:50%;padding:20px}
 .site-footer ul.menu{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;gap:1.5rem}
 .site-footer ul.menu>li:after{display:none}
+}@media screen and (max-width:860px){.gallery-container{padding-left:20px;padding-right:20px}
+.gallery-container .masonry-grid .grid-item{width:50%}
 }@media screen and (max-width:782px){body.logged-in.admin-bar .site-header .closeMenuToggle{top:60px}
 }@media screen and (max-width:768px){.static-hero{height:600px;margin-bottom:40px}
 .static-hero .heroImage{width:100%}
@@ -1613,6 +1629,7 @@ body.logged-in.admin-bar .site-header .closeMenuToggle{top:50px}
 .repeatable-features_block_icons .flexwrap .textBlock .titleBlock .h2{font-size:8vw}
 .repeatable-category_section .wrapper{padding-left:20px;padding-right:20px}
 .repeatable-category_section .categories .imageBlock{padding:10px}
+.gallery-container .masonry-grid .grid-item{width:100%}
 .site-header .primary-navigation{max-width:100%}
 .site-header .site-logo{width:220px}
 }@media(print),(prefers-reduced-motion:reduce){.animated{-webkit-animation-duration:1ms !important;animation-duration:1ms !important;-webkit-transition-duration:1ms !important;transition-duration:1ms !important;-webkit-animation-iteration-count:1 !important;animation-iteration-count:1 !important}

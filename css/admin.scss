@@ -44,6 +44,27 @@
 			}
 		}
 	}
+	.acf-field-group[data-name="twocolumnwithbox"] {
+		.acf-fields {
+			display: flex;
+			flex-wrap: wrap;
+			[data-name="boxed_content"] {
+				width: 40%;
+				.mce-edit-area.mce-container.mce-panel  {
+					padding: 30px;
+					iframe {
+						border: 1px solid #000!important;
+					}
+				}
+			}
+			[data-name="details"] {
+				width: 60%;
+			}
+			[data-name="boxed_content_position"] {
+				border-top: none!important;
+			}
+		}
+	}
 
 	.acf-repeater {
 		.acf-field-image[data-name="icon"] {
