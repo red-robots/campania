@@ -3,6 +3,7 @@
   $no_margin_bottom = get_sub_field('no_margin_bottom');
   $marginTop = ($no_margin_top) ? ' noMarginTop' : '';
   $marginBottom = ($no_margin_bottom) ? ' noMarginBottom' : '';
+  $section_title = get_sub_field('section_title');
   $content_layout = get_sub_field('content_layout');
   $fullwidth_text = get_sub_field('fullwidth_text');
   $two_column = get_sub_field('two_column_content');
@@ -13,6 +14,11 @@
   if($content_layout == 'fullwidth') { ?>
     <div data-group="<?php echo get_row_layout() ?>" id="repeatable-<?php echo get_row_layout() ?>--<?php echo $i ?>" class="repeatable repeatable-<?php echo get_row_layout() ?><?php echo $marginTop.$marginBottom ?> fullwidth-text-content">
       <div class="wrapper">
+        <?php if ($section_title) { ?>
+          <div class="titleDiv">
+            <h2 class="section-title"><?php echo anti_email_spam($section_title) ?></h2>
+          </div>
+        <?php } ?>
         <?php if ($fullwidth_text) { ?>
           <div class="text"><?php echo anti_email_spam($fullwidth_text) ?></div>
         <?php } ?>
@@ -21,6 +27,11 @@
   <?php } else if($content_layout == 'two_column') { ?>
     <div data-group="<?php echo get_row_layout() ?>" id="repeatable-<?php echo get_row_layout() ?>--<?php echo $i ?>" class="repeatable repeatable-<?php echo get_row_layout() ?><?php echo $marginTop.$marginBottom ?> two-column-text-content">
       <div class="wrapper">
+        <?php if ($section_title) { ?>
+          <div class="titleDiv">
+            <h2 class="section-title"><?php echo anti_email_spam($section_title) ?></h2>
+          </div>
+        <?php } ?>
         <div class="flexwrap">
           <?php if ($column1) { ?>
             <div class="fcol col1">

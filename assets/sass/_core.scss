@@ -372,12 +372,31 @@ div.buttons {
 }
 
 .wrapper {
-	max-width: 1200px;
+	max-width: 1300px;
 	width: 100%;
 	margin: 0 auto;
 	padding-left: 30px;
 	padding-right: 30px;
 }
+.colTitle {
+	margin: 0 0 30px;
+	text-transform: uppercase;
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 1.2;
+	letter-spacing: .08em;
+	text-align: center;
+}
+.titleDiv {
+	margin-bottom: 50px;
+	.section-title {
+		margin: 0 0;
+		text-transform: uppercase;
+		text-align: center;
+		letter-spacing: 0.06em;
+	}
+}
+
 
 .repeatable-text_content {
 	.wrapper {
@@ -922,9 +941,6 @@ div.buttons {
 		position: relative;
 		display: flex;
 		flex-wrap: wrap;
-		@include mid {
-			justify-content: flex-end;
-		}
 		.textCol {
 			width: 100%;
 			position: relative;
@@ -933,6 +949,7 @@ div.buttons {
 			color: #FFF;
 			padding: 50px 30px;
 			text-align: center;
+			text-transform: uppercase;
 			@include mid {
 				width: 60%;
 				padding: 50px 50px;
@@ -973,6 +990,16 @@ div.buttons {
 				background-repeat: no-repeat;
 			}
 		}
+		@include mid {
+			justify-content: flex-end;
+			&.text-position-right {
+				flex-direction: column-reverse;
+				.textCol {
+					left: unset;
+					right: 0;
+				}
+			}
+		}
 	}
 }
 
@@ -985,6 +1012,109 @@ div.buttons {
 	padding-top: 0!important;
 	&.two-column-text-content {
 		padding-top: 20px!important;
+	}
+}
+
+.repeatable-overlapping_text_blocks {
+	margin-top: 40px;
+	margin-bottom: 50px;
+	.flexwrap {
+		position: relative;
+		display: flex;
+		flex-wrap: wrap;
+		.blackBox {
+			background: #000;
+			color: #FFF;
+			padding: 40px 30px;
+			position: relative;
+			z-index: 10;
+			text-transform: uppercase;
+			@include xxl {
+				padding: 80px 80px;
+			}
+			.title {
+				margin: 0;
+				text-transform: uppercase;
+				letter-spacing: .05em;
+			}
+		}
+		.detailsBlock {
+			background: #ECE9E0;
+			padding: 40px 30px;
+			@include xxl {
+				padding: 100px 100px;
+			}
+			.colTitle {
+				margin-top: 0;
+				margin-bottom: 30px;
+			}
+		}
+		@include tab {
+			.detailsBlock {
+				width: 75%;
+			}
+			.blackBox {
+				width: 40%;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+			.flexCols {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-between;
+				.textCol1, .textCol2 {
+					width: 46%;
+				}
+			}
+			&.text-position-right {
+				&:has(.blackBox):has(.detailsBlock) {
+					flex-direction: column-reverse;	
+					.detailsBlock {
+						padding-right: 20%;
+					}
+					.blackBox {
+						right: 0;
+					}
+				}
+			}
+			&.text-position-left {
+				&:has(.blackBox):has(.detailsBlock) {
+					.detailsBlock {
+						padding-left: 20%;
+					}
+					.blackBox {
+						left: 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+.repeatable-text_content_3_columns {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	.contentColumns {
+		.flexwrap {
+			display: flex;
+			flex-wrap: wrap;
+			margin-left: -20px;
+			margin-right: -20px;
+			.textCol {
+				width: 100%;
+				padding: 0 20px;
+				@include tab {
+					padding: 20px 20px;
+					width: 33.333%;
+				}
+			}
+		}
+		&:has(.colTitle):has(.textCol) {
+			.colTitle {
+				margin-bottom: 10px;
+			}
+		}
 	}
 }
 

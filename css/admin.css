@@ -70,6 +70,42 @@
   top: 15px;
   left: 20px;
 }
+.acf-flexible-content [data-layout=overlapping_image_and_title] .acf-fields {
+  display: flex;
+  flex-wrap: wrap;
+}
+.acf-flexible-content [data-layout=overlapping_image_and_title] .acf-fields .acf-field {
+  width: 100%;
+}
+.acf-flexible-content [data-layout=overlapping_image_and_title] .acf-fields .acf-field[data-name=caption] {
+  width: 60%;
+}
+.acf-flexible-content [data-layout=overlapping_image_and_title] .acf-fields .acf-field[data-name=image] {
+  width: 40%;
+}
+.acf-flexible-content [data-layout=overlapping_text_blocks] .acf-field-group[data-name=details] .acf-fields {
+  display: flex;
+  flex-wrap: wrap;
+}
+.acf-flexible-content [data-layout=overlapping_text_blocks] .acf-field-group[data-name=details] .acf-fields .acf-field {
+  width: 100%;
+}
+.acf-flexible-content [data-layout=overlapping_text_blocks] .acf-field-group[data-name=details] .acf-fields .acf-field[data-name=column1] {
+  width: 50%;
+}
+.acf-flexible-content [data-layout=overlapping_text_blocks] .acf-field-group[data-name=details] .acf-fields .acf-field[data-name=column2] {
+  width: 50%;
+}
+.acf-flexible-content [data-layout=text_content_3_columns] .acf-field-group[data-name=columns] .acf-fields {
+  display: flex;
+  flex-wrap: wrap;
+}
+.acf-flexible-content [data-layout=text_content_3_columns] .acf-field-group[data-name=columns] .acf-fields .acf-field {
+  width: 100%;
+}
+.acf-flexible-content [data-layout=text_content_3_columns] .acf-field-group[data-name=columns] .acf-fields .acf-field[data-name=column1], .acf-flexible-content [data-layout=text_content_3_columns] .acf-field-group[data-name=columns] .acf-fields .acf-field[data-name=column2], .acf-flexible-content [data-layout=text_content_3_columns] .acf-field-group[data-name=columns] .acf-fields .acf-field[data-name=column3] {
+  width: 33.333%;
+}
 
 .acf-field-group[data-name=topbottom_spacing] {
   width: 100%;
