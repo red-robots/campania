@@ -44,7 +44,7 @@ jQuery(document).ready(function($) {
 	// 	});
 	// });
 
-  const swiperElements = document.querySelectorAll('.swiper');
+  const swiperElements = document.querySelectorAll('.slideshow');
   if(swiperElements.length) {
     // Loop through each element found
     swiperElements.forEach((el) => {

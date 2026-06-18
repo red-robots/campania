@@ -1118,6 +1118,253 @@ div.buttons {
 	}
 }
 
+.repeatable-projects_carousel {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	&:has(.projects-categories):has(.titleDiv) {
+		.titleDiv {
+			margin-bottom: 10px;
+		}
+	}
+}
+
+/* Carousel Container Layout */
+.projectsCarousel {
+	ul.projects-categories {
+		margin: 0 0 45px;
+		padding: 0 0;
+		list-style: none;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 1.5rem;
+		> li {
+			position: relative;
+			&:after {
+				content:"";
+				display: block;
+				width: 1px;
+				height: 14px;
+				background: #000;
+				position: absolute;
+				top: 42%;
+				right: -12px;
+				transform: translateY(-50%);
+			}
+			&:last-child:after {
+				display: none;
+			}
+			button, a {
+				background-color: transparent;
+				appearance: none;
+				border: none;
+				margin: 0 0;
+				display: inline-block;
+				color: #000;
+				text-decoration: none;
+				font-size: 16px;
+				line-height: 1.2;
+				text-transform: uppercase;
+				letter-spacing: 0.03em;
+				padding: 5px 5px;
+				span {
+					display: inline-block;
+					position: relative;
+					&:after {
+						content:"";
+						display: block;
+						width: 0;
+						height: 1px;
+						background: #000;
+						position: absolute;
+						bottom: 0;
+						left: 0;
+						transition: all ease .3s;
+					}
+				}
+				&:hover, &:focus {
+					color: $secondary;
+					span:after {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+	.carousel-wrapper {
+		position: relative;
+		width: 90%;
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 50px;
+		box-sizing: border-box;
+	}
+
+	.swiper {
+		width: 100%;
+		height: auto;
+	}
+
+	/* Slide Adjustments */
+	.swiper-slide {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: #fff;
+		overflow: hidden;
+		&.hidden-slide  {
+			display: none!important;
+		}
+		img {
+			display: block;
+			width: 100%;
+			height: auto; /* Lets the height scale naturally based on width */
+			max-height: 500px; /* Optional: prevents an extremely tall vertical image from blowing up the layout */
+			object-fit: contain; /* Guarantees the image is entirely visible */
+			transition: transform 0.3s ease;
+		}
+		a {
+			display: block;
+			width: 100%;
+			height: 100%;
+			cursor: zoom-in;
+			&:hover, &:focus {
+				img {
+					transform: scale(1.03);
+				}
+			}
+		}
+	}
+
+	/* Custom Navigation Arrow Styling */
+	.custom-nav-btn {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 45px;
+		height: 50px;
+		background-color: #000000;
+		color: #ffffff;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		z-index: 10;
+		transition: background-color 0.2s ease;
+		.arrow {
+			display: inline-block;
+			width: 100%;
+			height: 100%;
+			position: relative;
+			background-size: 45%;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-image: url('assets/img/polygon.png');
+			&.arrow-left {
+				left: -2px;
+				transform: scaleX(-1);
+			}
+			&.arrow-right {
+				right: -2px;
+			}
+		}
+
+		&.btn-prev { left: 30px; }
+		&.btn-next { right: 30px; }
+
+		&:hover, &:focus {
+			background-color: $secondary;
+		}
+	}
+	
+}
+
+.repeatable-section_bgcolor_border {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	.wrapper {
+		.inside {
+			background: #ECE9E0;
+			padding: 40px;
+			position: relative;
+		}
+		div.text {
+			text-align: center;
+			border: 1px solid #000;
+			padding: 30px;
+			h2 {
+				text-transform: uppercase;
+				letter-spacing: 0.05em;
+				margin: 0 0 10px;
+			}
+			p {
+				text-transform: uppercase;
+			}
+			.gform-theme--foundation .gform_fields {
+				gap: 12px!important;
+			}
+			&:has(h2),
+			&:has(p) {
+				.gform_wrapper {
+					margin-top: 35px;
+				}
+			}
+			.gform_wrapper {
+				text-align: left;
+				::placeholder {
+					font-family: $font_primary!important;
+					text-transform: uppercase!important;
+					letter-spacing: 0.05em!important;
+					color: #3c3c3c;
+				}
+				.gf_placeholder {
+					text-transform: uppercase!important;
+					letter-spacing: 0.05em!important;
+					color: #3c3c3c;
+				}
+				input, select, textarea {
+					border: 1px solid #FFF!important;
+					border-radius: 0!important;
+					min-height: 45px;
+				}
+				input, select {
+					padding-top: 5px;
+				}
+				.gform_button.button {
+					background-color: #000!important;
+					border-radius: 0!important;
+					color: #fff;
+					text-transform: uppercase!important;
+					letter-spacing: 0.05em;
+					padding: 13px 20px 10px!important;
+					border: none;
+					cursor: pointer;
+					font-family: $font_primary!important;
+					font-size: 16px!important;
+					transition: all ease .3s;
+					min-width: 150px!important;
+					&:hover, &:focus {
+						background-color: $secondary!important;
+						color: #000!important;
+					}
+				}
+				.gform_footer {
+					display: flex;
+					justify-content: center;
+				}
+			}
+			@include mid {
+				padding: 50px 100px;
+			}
+			@include xxl {
+				padding-left: clamp(50px, 12vw, 200px);
+				padding-right: clamp(50px, 12vw, 200px);
+			}
+		}
+	}
+}
+
+
 .sitemap-links {
 	display: flex;
 	justify-content: center;
