@@ -1330,6 +1330,26 @@ div.buttons {
 				input, select {
 					padding-top: 5px;
 				}
+				.ginput_container.ginput_container_select {
+					position: relative;
+					&:after {
+						content:"";
+						display: block;
+						width: 45px;
+						height: 100%;
+						position: absolute;
+						top: 0;
+						right: 0;
+						z-index: 5;
+						pointer-events: none;
+						background-image: url('assets/img/polygon.png');
+						background-size: 45%;
+						background-position: center;
+						background-repeat: no-repeat;
+						background-color: #000;
+						transform: rotateZ(90deg);
+					}
+				}
 				.gform_button.button {
 					background-color: #000!important;
 					border-radius: 0!important;
@@ -1473,6 +1493,9 @@ div.buttons {
 				span:after {
 					width: 100%;
 				}
+			}
+			&.current {
+				color: $secondary!important;
 			}
 		}
 	}

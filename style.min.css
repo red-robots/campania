@@ -1422,6 +1422,8 @@ div.buttons .button:hover,div.buttons .button:focus{outline:0;background-color:#
 .repeatable-section_bgcolor_border .wrapper div.text .gform_wrapper .gf_placeholder{text-transform:uppercase !important;letter-spacing:.05em !important;color:#3c3c3c}
 .repeatable-section_bgcolor_border .wrapper div.text .gform_wrapper input,.repeatable-section_bgcolor_border .wrapper div.text .gform_wrapper select,.repeatable-section_bgcolor_border .wrapper div.text .gform_wrapper textarea{border:1px solid #fff !important;border-radius:0 !important;min-height:45px}
 .repeatable-section_bgcolor_border .wrapper div.text .gform_wrapper input,.repeatable-section_bgcolor_border .wrapper div.text .gform_wrapper select{padding-top:5px}
+.repeatable-section_bgcolor_border .wrapper div.text .gform_wrapper .ginput_container.ginput_container_select{position:relative}
+.repeatable-section_bgcolor_border .wrapper div.text .gform_wrapper .ginput_container.ginput_container_select:after{content:"";display:block;width:45px;height:100%;position:absolute;top:0;right:0;z-index:5;pointer-events:none;background-image:url("assets/img/polygon.png");background-size:45%;background-position:center;background-repeat:no-repeat;background-color:#000;-webkit-transform:rotateZ(90deg);transform:rotateZ(90deg)}
 .repeatable-section_bgcolor_border .wrapper div.text .gform_wrapper .gform_button.button{background-color:#000 !important;border-radius:0 !important;color:#fff;text-transform:uppercase !important;letter-spacing:.05em;padding:13px 20px 10px !important;border:0;cursor:pointer;font-family:"Overpass",sans-serif !important;font-size:16px !important;-webkit-transition:all ease .3s;transition:all ease .3s;min-width:150px !important}
 .repeatable-section_bgcolor_border .wrapper div.text .gform_wrapper .gform_button.button:hover,.repeatable-section_bgcolor_border .wrapper div.text .gform_wrapper .gform_button.button:focus{background-color:#caa24d !important;color:#000 !important}
 .repeatable-section_bgcolor_border .wrapper div.text .gform_wrapper .gform_footer{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
@@ -1444,6 +1446,7 @@ div.buttons .button:hover,div.buttons .button:focus{outline:0;background-color:#
 .categories ul a span{display:inline-block;position:relative}
 .categories ul a span:after{content:"";display:block;width:0;height:1px;background:#000;position:absolute;left:0;bottom:0;-webkit-transition:all ease .3s;transition:all ease .3s}
 .categories ul a:hover span:after,.categories ul a:focus span:after{width:100%}
+.categories ul a.current{color:#caa24d !important}
 .gallery-container{max-width:1400px;margin:0 auto;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .gallery-container #load-more-btn{display:inline-block;-webkit-appearance:none;-moz-appearance:none;appearance:none;border:0;border-radius:0;font-size:16px;line-height:1.1;text-transform:uppercase;color:#fff;padding:14px 30px 10px;background-color:#000;-webkit-transition:all ease .3s;transition:all ease .3s}
 .gallery-container #load-more-btn:hover,.gallery-container #load-more-btn:focus{color:#000;background-color:#caa24d}
