@@ -1,28 +1,29 @@
 jQuery(document).ready(function($) {
 	var $container = $('.gallery-container');
-  var $grid = $('.masonry-grid');
+  	var $grid = $('.masonry-grid');
 
 	$grid.on('layoutComplete', function() {
 		$container.addClass('masonry-active');
 	});
 
-	$grid.masonry({
-		itemSelector: '.grid-item',
-		columnWidth: '.grid-sizer',
-		percentPosition: true,
-		gutter: 0
-	});
-
-	// var grid = document.querySelector('.masonry-grid');
-	// // Initialize Masonry ONLY after images have loaded
-	// imagesLoaded(grid, function() {
-	// 	var msnry = new Masonry(grid, {
-	// 		itemSelector: '.grid-item',
-	// 		columnWidth: '.grid-sizer',
-	// 		percentPosition: true,
-	// 		gutter: 0 // Space between items
-	// 	});
+	// $grid.masonry({
+	// 	itemSelector: '.grid-item',
+	// 	columnWidth: '.grid-sizer',
+	// 	percentPosition: true,
+	// 	gutter: 0
 	// });
+
+	$grid.imagesLoaded(function() {
+		$grid.masonry({
+		  itemSelector: '.grid-item',
+		  columnWidth: '.grid-sizer',
+		  percentPosition: true,
+		  stagger: 20,
+		  gutter: 0,
+		  visibleStyle: { opacity: 1 },
+		  hiddenStyle: { opacity: 0 },  
+		});
+	});
 
 
 	$('#load-more-btn').click(function(e) {
