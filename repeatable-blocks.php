@@ -1,14 +1,19 @@
 <?php
-$partsFiles = get_flexible_parts();
-if( have_rows('flexible_content') ) {
-$i=1; while( have_rows('flexible_content') ): the_row();
-  if($partsFiles) {
-    foreach($partsFiles as $file) {
-      include( locate_template('parts-flexible/'.$file) );
+$is_home_page = ( is_front_page() || is_home() ) ? true : false;
+$partsFiles = get_flexible_parts($is_home_page);
+$flexible_field_name = ($is_home_page) ? 'flexible_content' : 'subpage_flexible_content';
+
+if( have_rows($flexible_field_name) ) {
+  $i=1; while( have_rows($flexible_field_name) ): the_row();
+    if($partsFiles) {
+      foreach($partsFiles as $filePath) {
+        include( locate_template($filePath) );
+      }
     }
-  }
-$i++; endwhile;
-} ?>
+  $i++; endwhile;
+}
+
+?>
 <script>
 jQuery(document).ready(function($){
   const testimonialSwipers = document.querySelectorAll('.testimonial-swiper');
@@ -84,6 +89,89 @@ jQuery(document).ready(function($){
       });
     }
   }
+
+
+  if( $(".mySwiperCarousel").length ) {
+    let swiper;
+
+    // 1. Core initialization function
+    function initSwiper() {
+      swiper = new Swiper(".mySwiperCarousel", {
+          slidesPerView: 3, 
+          spaceBetween: 30,
+          // Loop is set to true, but we'll dynamically manage it based on filtered content length
+          loop: document.querySelectorAll('.swiper-slide:not(.hidden-slide)').length >= 3,
+          autoplay: {
+              delay: 3000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+          },
+          navigation: {
+              nextEl: ".btn-next",
+              prevEl: ".btn-prev",
+          },
+          breakpoints: {
+              0: { slidesPerView: 1, spaceBetween: 10 },
+              640: { slidesPerView: 2, spaceBetween: 20 },
+              1024: { slidesPerView: 3, spaceBetween: 30 },
+          },
+      });
+    }
+
+    // Run Swiper initial load
+    initSwiper();
+
+    // 2. Filter Button Logic
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const allSlides = document.querySelectorAll('.mySwiperCarousel .swiper-slide');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+          // Change Active Styling of Nav Items
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+
+          const targetFilter = button.getAttribute('data-filter');
+          console.log(targetFilter);
+          // Destroy existing Swiper parameters completely before filtering elements
+          swiper.destroy(true, true);
+
+          // Show/Hide slides depending on data-category properties
+          allSlides.forEach(slide => {
+              const slideCategory = slide.getAttribute('data-category');
+             
+              if (targetFilter === 'all' || slideCategory === targetFilter) {
+                  slide.classList.remove('hidden-slide');
+              } else {
+                  slide.classList.add('hidden-slide');
+              }
+          });
+
+          // Update Fancybox grouping to only open slides visible on screen
+          Fancybox.unbind("[data-fancybox='gallery']");
+          Fancybox.bind(".swiper-slide:not(.hidden-slide) [data-fancybox='gallery']", {
+              loop: true,
+              on: {
+                  done: () => { swiper.autoplay.stop(); },
+                  close: () => { swiper.autoplay.start(); }
+              }
+          });
+
+          // Re-build Swiper with the remaining slides
+          initSwiper();
+      });
+    });
+
+    // Initial Fancybox bind for all visible slides
+    Fancybox.bind(".swiper-slide:not(.hidden-slide) [data-fancybox='gallery']", {
+      loop: true,
+      on: {
+          done: () => { swiper.autoplay.stop(); },
+          close: () => { swiper.autoplay.start(); }
+      }
+    });
+  }
+
 });
 
 

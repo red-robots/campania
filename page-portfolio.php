@@ -21,7 +21,10 @@ if($filter_category) {
   <main id="main" class="site-main" role="main">
     <?php if($flexible_content_internal) { ?>
       <div class="flexible-content-internal">
-        <?php include( locate_template('repeatable-blocks-internal.php') ); ?>
+        <?php 
+          //include( locate_template('repeatable-blocks-internal.php') ); 
+          include( locate_template('repeatable-blocks.php') ); 
+        ?>
       </div>
     <?php } ?>
 

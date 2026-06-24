@@ -346,8 +346,13 @@ function display_form_button_on_specific_page( $display_add_form_button ) {
   return $display_add_form_button;
 }
 
-function get_flexible_parts() {
+function get_flexible_parts($isHome=false) {
 	$dir = get_stylesheet_directory() . '/parts-flexible/';
+  if($isHome) {
+    $dir .= 'home/';
+  } else {
+    $dir .= 'subpage/';
+  }
 	$partsFiles = [];
 	if (is_dir($dir)) {
 		$files = scandir($dir);
@@ -355,7 +360,12 @@ function get_flexible_parts() {
 			$pathinfo = pathinfo($file);
 			if( isset($pathinfo['extension']) && strtolower($pathinfo['extension']) =='php' ) {
 				if (!preg_match('/-copy| copy|-bak|-backup/i', strtolower($file))) {
-					$partsFiles[] = $file;
+					// $partsFiles[] = $file;
+          if($isHome) {
+            $partsFiles[] = 'parts-flexible/home/' . $file;
+          } else {
+            $partsFiles[] = 'parts-flexible/subpage/' . $file;
+          }
 				}
 			}
 		}
@@ -427,3 +437,24 @@ function load_more_featured_posts() {
 }
 add_action('wp_ajax_load_more_featured_posts', 'load_more_featured_posts');
 add_action('wp_ajax_nopriv_load_more_featured_posts', 'load_more_featured_posts');
+
+
+function getCleanDomainName($url) {
+  // 1. Extract the host (e.g., "www.instagram.com")
+  $host = parse_url($url, PHP_URL_HOST);
+  if (!$host) {
+      $host = parse_url('http://' . $url, PHP_URL_HOST);
+  }
+
+  // 2. Remove "www." if present
+  $host = preg_replace('/^www\./', '', $host);
+
+  // 3. Remove the extension (.com, .net, etc.)
+  // This finds the last dot and grabs everything before it
+  $lastDotPos = strrpos($host, '.');
+  if ($lastDotPos !== false) {
+      $host = substr($host, 0, $lastDotPos);
+  }
+
+  return $host;
+}

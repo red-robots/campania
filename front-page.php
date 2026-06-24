@@ -11,12 +11,11 @@ $repeatable_blocks = get_field('flexible_content');
   <main id="main" class="site-main" role="main">
 
     <?php while ( have_posts() ) : the_post(); ?>
-
-      <?php if ($repeatable_blocks) { ?>
-        <?php include( locate_template('repeatable-blocks.php') ); ?>
-      <?php } ?>
-
     <?php endwhile; ?>
+
+    <?php if ($repeatable_blocks) { ?>
+      <?php include( locate_template('repeatable-blocks.php') ); ?>
+    <?php } ?>
 
   </main><!-- #main -->
 </div><!-- #primary -->

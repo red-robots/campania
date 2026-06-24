@@ -185,6 +185,9 @@ div.buttons {
 			position: relative;
 			top: 2px;
 			> li {
+				position: relative;
+				padding-bottom: 20px;
+				top: 10px;
 				> a {
 					display: block;
 					color: #000;
@@ -194,8 +197,82 @@ div.buttons {
 					letter-spacing: 0.03em;
 					text-transform: uppercase;
 					text-decoration: none;
+					span {
+						display: inline-block;
+						position: relative;
+						&:after {
+							content:"";
+							display: block;
+							width: 100%;
+							height: 1px;
+							background: #000;
+							position: absolute;
+							bottom: 3px;
+							left: 0;
+							transform: scaleX(0);
+							transition: transform ease .3s;
+						}
+					}
+					&:hover, &:focus {
+						span:after {
+							transform: scaleX(1);
+						}
+					}
 				}
+
+				//Submenu
+				ul.sub-menu {
+					margin: 0 0;
+					padding: 10px;
+					list-style: none;
+					display: block;
+					position: absolute;
+					top: 65%;
+					left: 0;
+					width: 220px;
+					background: #000;
+					pointer-events: none;
+					opacity: 0;
+					transform: translateY(10px);
+					transition: transform ease .3s, opacity ease .2s;
+					> li {
+						width: 100%;
+						padding: 0 0;
+						margin: 0 0;
+						border-bottom: 1px solid rgba(255,255,255,.25);
+						position: relative;
+					}
+					a {
+						display: block;
+						text-decoration: none;
+						color: #FFF;
+						padding: 10px 5px 5px;
+						transition: all ease .3s;
+						font-size: 15px;
+						line-height: 1.2;
+						&:hover, &:focus {
+							background: rgba(255,255,255,.15);
+						}		
+					}
+					> li:last-child {
+						border-bottom: none;
+					}
+				}
+
+				&:has(ul.sub-menu):hover,
+				&:has(ul.sub-menu):focus-within {
+					> a span:after {
+						transform: scaleX(1);
+					}
+					ul.sub-menu {
+						opacity: 1;
+						pointer-events: auto;
+						transform: translateY(0);
+					}
+				}
+				
 			}
+
 		}
 
 		a.header-cta-button {
@@ -223,10 +300,10 @@ div.buttons {
 
 .static-hero {
 	position: relative;
-	height: 750px;
-	@media screen and (min-height:800px) and (min-width:1381px) {
-		height: 85vh;
-	}
+	height: 550px;
+	// @media screen and (min-height:800px) and (min-width:1381px) {
+	// 	height: 70vh;
+	// }
 	@include max(768px) {
 		height: 600px;
 		margin-bottom: 40px;
@@ -445,13 +522,13 @@ div.buttons {
 				}
 			}
 
-			&:has(.has-buttons-1) {
+			&:has(.button-count-1) {
 				@include tab {
 					.columnText.has-buttons {
-						width: 30%;
+						width: 25%;
 					}
 					.columnText:not(.has-buttons) {
-						width: 70%;
+						width: 74%;
 					}
 				}
 			}
@@ -464,6 +541,85 @@ div.buttons {
 			margin-bottom: 30px;
 		}
 	}
+}
+
+.repeatable-text_content_and_buttons {
+  .wrapper {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  p {
+    font-size: 20px;
+    line-height: 1.7;
+  }
+  p:empty {
+    display: none;
+  }
+  div.buttons {
+    margin-top: 0;
+    margin-bottom: 0;
+		&:not(.button-count-1) {
+			display: flex;
+			flex-wrap: wrap;
+		}
+  }
+  .flexwrap {
+    display: flex;
+    flex-wrap: wrap;
+    &:has(.columnText1):has(.columnText2) {
+      .columnText {
+        width: 50%;
+        padding: 20px;
+      }
+      .columnText.has-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        @include tab {
+          width: 40%;
+          align-content: center;
+          flex-wrap: wrap;
+          justify-content: flex-end;
+        }
+      }
+      .columnText:not(.has-buttons) {
+        width: 100%;
+        @include tab {
+          width: 60%;
+        }
+      }
+
+      &:has(.button-count-1) {
+        @include tab {
+          .columnText.has-buttons {
+            width: 25%;
+          }
+          .columnText:not(.has-buttons) {
+            width: 74%;
+          }
+        }
+      }
+
+			&:has(.button-count-2) {
+				@include tab {
+          .columnText.has-buttons {
+            width: 35%;
+          }
+          .columnText:not(.has-buttons) {
+            width: 64%;
+          }
+        }
+			}
+    }
+  }
+
+  &.fullwidth {
+    div.buttons {
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+  }
 }
 
 .repeatable-features_block_icons {
@@ -1850,6 +2006,25 @@ div.buttons {
 		color: #000;
 	}
 
+	.social-media-links {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 1.5rem;
+		margin-top: 25px;
+		a {
+			display: inline-block;
+			text-decoration: none;
+			color: #000;
+			font-size: 28px;
+			line-height: 1;
+			transition: all ease .3s;
+			&:hover, &:focus {
+				transform: scale(1.1);
+			}
+		}
+	}
+
 	@include max(960px) {
 		ul.menu {
 			display: flex;
@@ -1989,6 +2164,7 @@ div.buttons {
 						padding: 0 0;
 						margin: 0 0;
 						border-bottom: 1px solid rgba(255,255,255,.25);
+						position: relative;
 					}
 					a {
 						display: block;
@@ -2000,6 +2176,7 @@ div.buttons {
 						}
 					}
 				}
+
 				a.header-cta-button {
 					display: block;
 					width: 90%;
