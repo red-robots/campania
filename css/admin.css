@@ -131,4 +131,17 @@
   border-top: none !important;
 }
 
+body.post-type-portfolio #post-body-content div.meta-box-sortables {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+body.post-type-portfolio #post-body-content div.meta-box-sortables #postimagediv {
+  width: 30%;
+}
+body.post-type-portfolio #post-body-content div.meta-box-sortables .acf-postbox {
+  width: 68%;
+}
+
 /*# sourceMappingURL=admin.css.map */

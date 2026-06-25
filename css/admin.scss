@@ -166,4 +166,19 @@
 	}
 }
 
-
+body.post-type-portfolio {
+	#post-body-content {
+		div.meta-box-sortables {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: flex-start;
+			justify-content: space-between;
+			#postimagediv {
+				width: 30%;
+			}
+			.acf-postbox {
+				width: 68%;
+			}
+		}
+	}
+}

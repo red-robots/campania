@@ -1476,18 +1476,21 @@ div.buttons .button:hover,div.buttons .button:focus{outline:0;background-color:#
 .gallery-container .masonry-grid:after{content:"";display:block;clear:both}
 .gallery-container .grid-item{margin:0;padding:15px}
 .gallery-container .grid-sizer,.gallery-container .grid-item{width:33.333%}
-.gallery-container .post-thumbnail,.gallery-container .post-thumbnail a{display:block;width:100%}
-.gallery-container .post-thumbnail img,.gallery-container .post-thumbnail a img{width:100%;height:auto}
+.gallery-container .post-thumbnail,.gallery-container .post-thumbnail a{display:block;width:100%;margin:0 0 !important;float:left}
+.gallery-container .post-thumbnail img,.gallery-container .post-thumbnail a img{width:100%;height:auto;float:left}
 .gallery-container.masonry-active .grid-sizer{display:block}
 .custom-fancybox-popup{padding:0 !important;background:#fff !important;max-width:850px;width:100%;overflow:visible !important}
 .custom-fancybox-popup .popup-container{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:40px;background-color:#fff;position:relative}
 .custom-fancybox-popup .popup-image-side{-webkit-box-flex:1.2;-ms-flex:1.2;flex:1.2;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
-.custom-fancybox-popup .popup-image-side img{max-width:100%;max-height:450px;height:auto;display:block;-webkit-box-shadow:0 4px 15px rgba(0,0,0,.1);box-shadow:0 4px 15px rgba(0,0,0,.1)}
+.custom-fancybox-popup .popup-image-side img{max-width:100%;max-height:90vh;height:auto;display:block;-webkit-box-shadow:0 4px 15px rgba(0,0,0,.1);box-shadow:0 4px 15px rgba(0,0,0,.1)}
 .custom-fancybox-popup .popup-info-side{-webkit-box-flex:.8;-ms-flex:.8;flex:.8;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;padding-left:30px;margin-right:-6vw}
 .custom-fancybox-popup .info-box{background-color:#efece6;padding:50px 40px;width:100%;-webkit-box-sizing:border-box;box-sizing:border-box;letter-spacing:2px}
 .custom-fancybox-popup .info-box .category{text-transform:uppercase;font-family:"Zalando Sans Expanded",sans-serif;font-size:20px;line-height:1.2;letter-spacing:.08em;margin-bottom:10px}
-.custom-fancybox-popup .info-box .description p{font-size:15px;text-transform:uppercase;margin-top:0;margin-bottom:5px}
+.custom-fancybox-popup .info-box .allcap,.custom-fancybox-popup .info-box .all-caps *{text-transform:uppercase;font-size:15px}
+.custom-fancybox-popup .info-box .allcap{margin-bottom:2px}
+.custom-fancybox-popup .info-box .description p{font-size:14px;line-height:1.4;letter-spacing:.01em;margin-top:0;margin-bottom:10px}
 .custom-fancybox-popup .info-box .description p:last-child{margin-bottom:0}
+.custom-fancybox-popup .info-box:has(.allcap):has(.description) .description{margin-top:8px}
 .custom-fancybox-popup .info-box .title{font-size:16px;color:#000;margin:0 0 20px 0;font-weight:400;line-height:1.4}
 .custom-fancybox-popup .info-box .location-date{font-size:11px;color:#666;margin:0}
 .custom-fancybox-popup .custom-nav-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;width:100%;position:relative;left:40px}
@@ -1501,6 +1504,7 @@ div.buttons .button:hover,div.buttons .button:focus{outline:0;background-color:#
 .custom-fancybox-popup .fancybox-close-small{color:#000 !important;padding:15px !important}
 .custom-fancybox-popup .fancybox-button{right:8px !important;top:8px !important}
 .custom-fancybox-popup .fancybox-button svg{-webkit-transform:scale(2.5);transform:scale(2.5)}
+body:has(.fancybox-navigation-hidden) .fancybox-navigation{visibility:hidden !important;pointer-events:none !important;opacity:0}
 .site-footer{background:#ece9e0;padding:80px 20px;margin-top:50px;position:relative;overflow:hidden}
 .site-footer .iconsList{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;gap:2rem}
 .site-footer .iconsList .info{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;gap:1.5rem}

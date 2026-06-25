@@ -71,7 +71,7 @@ jQuery(document).ready(function($) {
 
 
 	// 1. Initialize Fancybox
-	$('[data-fancybox="gallery"]').fancybox({
+	$('.gallery-container [data-fancybox]').fancybox({
 		clickContent: false, 
 		buttons: [],         
 		smallBtn: true,      
@@ -109,18 +109,55 @@ jQuery(document).ready(function($) {
 	// 2. Safe Previous Button Handler
 	$(document).on('click', '.prev-btn', function(e) {
 		e.preventDefault();
+		const prevBtn = $(this);
+		const count = $(this).attr('data-count');
+		const mainImage = $(this).attr('data-main-image');
+		const galleryId = $(this).attr('data-gallery-id');
+		const index = $(this).attr('data-index');
+		const prevIndex = parseInt(index) - 1;
 		var instance = $.fancybox.getInstance();
 		if (instance) {
-			instance.previous();
+			const popContainerId = `#popup-item-${galleryId}`;
+			const popupContainer = $(popContainerId);
+			const imageContainer = popupContainer.find('.popup-image-side');
+			const nextBtn = popupContainer.find('.next-btn');
+			if( instance['group']!=undefined && instance['group'][index]['src']!=undefined ) {
+				var imageUrl = instance['group'][index]['src'];
+				if(imageUrl==popContainerId) {
+					imageUrl = mainImage;
+				}
+				imageContainer.html(`<img src="${imageUrl}" alt="Gallery Image" class="animated fadeIn" />`);
+				prevBtn.attr('data-index', prevIndex);
+				if( prevIndex < 0 ) {
+					prevBtn.prop('disabled', true).css('opacity', '0.3');
+				}
+				nextBtn.attr('data-index', parseInt(index) + 1).prop('disabled', false).css('opacity', '1');
+			}
 		}
 	});
 
 	// 3. Safe Next Button Handler
 	$(document).on('click', '.next-btn', function(e) {
 		e.preventDefault();
+		const nextBtn = $(this);
+		const count = $(this).attr('data-count');
+		const galleryId = $(this).attr('data-gallery-id');
+		const index = $(this).attr('data-index');
+		const nextIndex = parseInt(index) + 1;
 		var instance = $.fancybox.getInstance();
 		if (instance) {
-			instance.next();
+			const popupContainer = $(`#popup-item-${galleryId}`);
+			const imageContainer = popupContainer.find('.popup-image-side');
+			const prevBtn = popupContainer.find('.prev-btn');
+			if( instance['group']!=undefined && instance['group'][index]['src']!=undefined ) {
+				const imageUrl = instance['group'][index]['src'];
+				imageContainer.html(`<img src="${imageUrl}" alt="Gallery Image" class="animated fadeIn" />`);
+				nextBtn.attr('data-index', nextIndex);
+				if( nextIndex > count ) {
+					nextBtn.prop('disabled', true).css('opacity', '0.3');
+				}
+				prevBtn.attr('data-index', parseInt(index) - 1).prop('disabled', false).css('opacity', '1');
+			}
 		}
 	});
 	

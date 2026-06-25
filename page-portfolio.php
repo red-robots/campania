@@ -95,7 +95,7 @@ if($filter_category) {
 
       $initial_query = new WP_Query($args);
       if ($initial_query->have_posts()) { ?>
-      <div class="gallery-container">
+      <div class="gallery-container fancybox-navigation-hidden">
         <div class="masonry-grid">
           <div class="grid-sizer"></div>
           <?php while ($initial_query->have_posts()) { $initial_query->the_post(); 

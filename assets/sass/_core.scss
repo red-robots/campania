@@ -1707,9 +1707,12 @@ div.buttons {
 	.post-thumbnail a {
 		display: block;
 		width: 100%;
+		margin: 0 0!important;
+		float: left;
 		img {
 			width: 100%;
 			height: auto;
+			float: left;
 		}
 	}
 	&.masonry-active .grid-sizer {
@@ -1755,7 +1758,8 @@ div.buttons {
 
 	.popup-image-side img {
 		max-width: 100%;
-		max-height: 450px;
+		max-height: 90vh;
+		// max-height: 450px;
 		height: auto;
 		display: block;
 		box-shadow: 0 4px 15px rgba(0,0,0,0.1);
@@ -1786,15 +1790,28 @@ div.buttons {
 			letter-spacing: 0.08em;
 			margin-bottom: 10px;
 		}
+		.allcap, .all-caps * {
+			text-transform: uppercase;
+			font-size: 15px;
+		}
+		.allcap {
+			margin-bottom: 2px;
+		}
 		.description {
 			p {
-				font-size: 15px;
-				text-transform: uppercase;
+				font-size: 14px;
+				line-height: 1.4;
+				letter-spacing: 0.01em;
 				margin-top: 0;
-				margin-bottom: 5px;
+				margin-bottom: 10px;
 			}
 			p:last-child {
 				margin-bottom: 0;
+			}
+		}
+		&:has(.allcap):has(.description) { 
+			.description {
+				margin-top: 8px;
 			}
 		}
 	}
@@ -1875,6 +1892,14 @@ div.buttons {
   top:  8px!important;
 	svg {
 		transform: scale(2.5);
+	}
+}
+
+body:has(.fancybox-navigation-hidden) {
+	.fancybox-navigation {
+		visibility: hidden!important;
+		pointer-events: none!important;
+		opacity: 0;
 	}
 }
 
