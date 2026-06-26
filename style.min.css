@@ -1258,7 +1258,8 @@ div.buttons .button{-webkit-appearance:none;-moz-appearance:none;appearance:none
 div.buttons .button.btn-wide{padding:12px 15px;min-width:250px}
 div.buttons .button:hover,div.buttons .button:focus{outline:0;background-color:#ece9e0;color:#000}
 .site-header{padding-top:15px;padding-bottom:15px;position:absolute;top:0;left:0;width:100%;z-index:100}
-.site-header .header-inner{padding-left:20px;padding-right:20px;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
+.site-header:before{content:"";display:block;width:100%;height:165%;position:absolute;top:0;left:0;pointer-events:none;background:-webkit-gradient(linear,left top,left bottom,color-stop(5%,white),to(rgba(255,255,255,0)));background:linear-gradient(to bottom,white 5%,rgba(255,255,255,0) 100%)}
+.site-header .header-inner{padding-left:20px;padding-right:20px;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;position:relative;z-index:10}
 .site-header .site-logo{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;width:350px}
 .site-header .site-logo a,.site-header .site-logo img{display:block;width:100%;height:auto}
 .site-header .menu-toggle,.site-header .closeMenuToggle{display:none}
@@ -1304,23 +1305,24 @@ div.buttons .button:hover,div.buttons .button:focus{outline:0;background-color:#
 .titleDiv{margin-bottom:50px}
 .titleDiv .section-title{margin:0;text-transform:uppercase;text-align:center;letter-spacing:.06em}
 .repeatable-text_content .wrapper{padding-top:30px;padding-bottom:30px}
-.repeatable-text_content p{font-size:20px;line-height:1.7}
+.repeatable-text_content p{font-size:16px;line-height:1.6}
 .repeatable-text_content p:empty{display:none}
 .repeatable-text_content div.buttons{margin-top:0;margin-bottom:0}
-.repeatable-text_content .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}
-.repeatable-text_content .flexwrap:has(.columnText1):has(.columnText2) .columnText{width:50%;padding:20px}
-.repeatable-text_content .flexwrap:has(.columnText1):has(.columnText2) .columnText.has-buttons{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;width:100%}
-.repeatable-text_content .flexwrap:has(.columnText1):has(.columnText2) .columnText:not(.has-buttons){width:100%}
+.repeatable-text_content div.buttons a.button{white-space:nowrap}
+.repeatable-text_content .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex}
+.repeatable-text_content .flexwrap:has(.columnText1):has(.columnText2) .columnText{padding:20px}
+.repeatable-text_content .flexwrap:has(.columnText1):has(.columnText2) .columnText.has-buttons{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .repeatable-text_content.fullwidth div.buttons{margin-top:30px;margin-bottom:30px}
 .repeatable-text_content_and_buttons .wrapper{padding-top:30px;padding-bottom:30px}
-.repeatable-text_content_and_buttons p{font-size:20px;line-height:1.7}
+.repeatable-text_content_and_buttons p{font-size:16px;line-height:1.6}
 .repeatable-text_content_and_buttons p:empty{display:none}
 .repeatable-text_content_and_buttons div.buttons{margin-top:0;margin-bottom:0}
 .repeatable-text_content_and_buttons div.buttons:not(.button-count-1){display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}
-.repeatable-text_content_and_buttons .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}
-.repeatable-text_content_and_buttons .flexwrap:has(.columnText1):has(.columnText2) .columnText{width:50%;padding:20px}
-.repeatable-text_content_and_buttons .flexwrap:has(.columnText1):has(.columnText2) .columnText.has-buttons{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;width:100%}
-.repeatable-text_content_and_buttons .flexwrap:has(.columnText1):has(.columnText2) .columnText:not(.has-buttons){width:100%}
+.repeatable-text_content_and_buttons div.buttons a.button{white-space:nowrap}
+.repeatable-text_content_and_buttons .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+.repeatable-text_content_and_buttons .flexwrap:has(.columnText1):has(.columnText2) .columnText{padding:20px}
+.repeatable-text_content_and_buttons .flexwrap:has(.columnText1):has(.columnText2) .columnText.has-buttons{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+.repeatable-text_content_and_buttons .flexwrap:has(.columnText1):has(.columnText2) .columnText2:not(.has-buttons){width:100%}
 .repeatable-text_content_and_buttons.fullwidth div.buttons{margin-top:30px;margin-bottom:30px}
 .repeatable-features_block_icons{position:relative;padding:20px}
 .repeatable-features_block_icons .wrapper{max-width:1500px;width:100%;margin:0 auto;padding:50px 50px;background:#ece9e0}
@@ -1529,16 +1531,10 @@ body:has(.fancybox-navigation-hidden) .fancybox-navigation{visibility:hidden !im
 .site-footer .social-media-links a:hover,.site-footer .social-media-links a:focus{-webkit-transform:scale(1.1);transform:scale(1.1)}
 @media(min-width:960px){.site-header .header-inner{padding-left:80px;padding-right:80px}
 .site-header .main-navigation{right:-80px}
-.repeatable-text_content .flexwrap:has(.columnText1):has(.columnText2) .columnText.has-buttons{width:40%;-ms-flex-line-pack:center;align-content:center;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}
-.repeatable-text_content .flexwrap:has(.columnText1):has(.columnText2) .columnText:not(.has-buttons){width:60%}
-.repeatable-text_content .flexwrap:has(.columnText1):has(.columnText2):has(.button-count-1) .columnText.has-buttons{width:25%}
-.repeatable-text_content .flexwrap:has(.columnText1):has(.columnText2):has(.button-count-1) .columnText:not(.has-buttons){width:74%}
+.repeatable-text_content .flexwrap:has(.columnText1):has(.columnText2) .columnText.has-buttons{-ms-flex-line-pack:center;align-content:center;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}
+.repeatable-text_content .flexwrap:has(.columnText1):has(.columnText2) .columnText1:not(.has-buttons){padding-right:30px}
 .repeatable-text_content_and_buttons .flexwrap:has(.columnText1):has(.columnText2) .columnText.has-buttons{width:40%;-ms-flex-line-pack:center;align-content:center;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}
-.repeatable-text_content_and_buttons .flexwrap:has(.columnText1):has(.columnText2) .columnText:not(.has-buttons){width:60%}
-.repeatable-text_content_and_buttons .flexwrap:has(.columnText1):has(.columnText2):has(.button-count-1) .columnText.has-buttons{width:25%}
-.repeatable-text_content_and_buttons .flexwrap:has(.columnText1):has(.columnText2):has(.button-count-1) .columnText:not(.has-buttons){width:74%}
-.repeatable-text_content_and_buttons .flexwrap:has(.columnText1):has(.columnText2):has(.button-count-2) .columnText.has-buttons{width:35%}
-.repeatable-text_content_and_buttons .flexwrap:has(.columnText1):has(.columnText2):has(.button-count-2) .columnText:not(.has-buttons){width:64%}
+.repeatable-text_content_and_buttons .flexwrap:has(.columnText1):has(.columnText2) .columnText1:not(.has-buttons){padding-right:30px}
 .repeatable-regular_text_content.twocolumnwithbox .wrapper{width:90vw}
 .repeatable-regular_text_content.twocolumnwithbox .borderedBox{width:40%}
 .repeatable-regular_text_content.twocolumnwithbox .borderedBox.p-left{margin-bottom:0;padding-right:5vw}
@@ -1614,7 +1610,9 @@ body:has(.fancybox-navigation-hidden) .fancybox-navigation{visibility:hidden !im
 .site-header .primary-navigation.closed{display:block;-webkit-animation-name:slideOutRight;animation-name:slideOutRight}
 body:not(.home) .site-header .menu-toggle{top:35%}
 body.logged-in.admin-bar .site-header .closeMenuToggle{top:50px}
-}@media screen and (max-width:960px){.repeatable-category_section .categories .imageBlock{width:50%;padding:20px}
+}@media screen and (max-width:960px){.repeatable-text_content_and_buttons .flexwrap{-ms-flex-wrap:wrap;flex-wrap:wrap}
+.repeatable-text_content_and_buttons .flexwrap .columnText{width:100%}
+.repeatable-category_section .categories .imageBlock{width:50%;padding:20px}
 .site-footer ul.menu{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;gap:1.5rem}
 .site-footer ul.menu>li:after{display:none}
 }@media screen and (max-width:860px){.gallery-container{padding-left:20px;padding-right:20px}
