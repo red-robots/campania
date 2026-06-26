@@ -1630,6 +1630,9 @@ body.logged-in.admin-bar .site-header .closeMenuToggle{top:50px}
 .static-hero .heroText .text{padding:30px 30px !important;-webkit-transform:translateY(50px);transform:translateY(50px)}
 .slider-hero .slideshow-wrapper{height:600px;margin-bottom:40px}
 .slider-hero .slideshow .swiper-wrapper .swiper-slide .slideImage{width:100%}
+.internalHero .heroText{width:80%}
+.internalHero .heroText div.text{padding:25px}
+.internalHero .heroText h1{font-size:clamp(20px,6vw,35px);white-space:pre-wrap;overflow-wrap:anywhere}
 .repeatable-regular_text_content.two-column-text-content .flexwrap .fcol.col1{padding-bottom:0}
 .repeatable-callout .flexwrap{text-align:center}
 .repeatable-callout div.buttons{width:100%;text-align:center}
