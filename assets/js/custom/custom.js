@@ -5,6 +5,15 @@
  */
 jQuery(document).ready(function($) {
 
+	if( !$('body').hasClass('home') ) {
+		if( $('#primary').length ) {
+			const firstDiv = $('#primary div').first();
+			if( firstDiv.hasClass('repeatable-hero') ) {
+				firstDiv.addClass('first-repeatable-hero');
+			}
+		}
+	}
+
 	// if( $('.popup-image').length ) {
 	// 	$('.popup-image').fancybox({
 	// 		//buttons : ['close','thumbs','fullScreen'],

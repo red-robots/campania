@@ -74,7 +74,15 @@
  *  Date Modified: 03.31.2026
  */
 jQuery(document).ready(function ($) {
-  // if( $('.popup-image').length ) {
+  if (!$('body').hasClass('home')) {
+    if ($('#primary').length) {
+      var firstDiv = $('#primary div').first();
+
+      if (firstDiv.hasClass('repeatable-hero')) {
+        firstDiv.addClass('first-repeatable-hero');
+      }
+    }
+  } // if( $('.popup-image').length ) {
   // 	$('.popup-image').fancybox({
   // 		//buttons : ['close','thumbs','fullScreen'],
   // 		buttons : ['fullScreen','close'],
@@ -109,6 +117,8 @@ jQuery(document).ready(function ($) {
   // 		gutter: 0 // Space between items
   // 	});
   // });
+
+
   var swiperElements = document.querySelectorAll('.slideshow');
 
   if (swiperElements.length) {
