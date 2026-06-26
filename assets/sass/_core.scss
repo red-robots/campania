@@ -2190,6 +2190,68 @@ body:has(.fancybox-navigation-hidden) {
 						margin: 0 0;
 						border-bottom: 1px solid rgba(255,255,255,.25);
 						position: relative;
+
+						> a span:after {
+							display: none!important;
+						}
+
+						&.menu-item-has-children {
+							> a {
+								position: relative;
+								margin-right: 60px;
+							}
+							.submenu-toggle {
+								appearance: none;
+								border: none;
+								padding: 0 0;
+								margin: 0 0;
+								background-color: transparent;
+								display: inline-flex;
+								align-items: center;
+								justify-content: center;
+								width: 52px;
+								height: 52px;
+								position: absolute;
+								right: 0;
+								top: 0;
+								z-index: 10;
+								svg {
+									width: 50px;
+									height: 8px;
+									transition: transform ease .3s;
+								}
+								&:hover, &:focus {
+									background: rgba(255,255,255,.12);
+								}
+								&[aria-expanded="true"] {
+									background: rgba(255,255,255,.12);
+									svg {
+										transform: rotate(180deg);
+									}
+								}
+							}
+						}
+
+						ul.sub-menu {
+							display: none;
+							position: relative !important;
+							top: 0 !important;
+							width: 100%;
+							opacity: 1;
+							transform: none;
+							padding-top: 6px;
+							padding-bottom: 6px;
+							padding-left: 10px;
+							padding-right: 10px;
+							background: rgba(255,255,255,.12);
+							> li {
+								border-bottom: none!important;
+								margin: 5px 0;
+								a {
+									padding: 10px 10px 8px;
+								}
+							}
+						}
 					}
 					a {
 						display: block;

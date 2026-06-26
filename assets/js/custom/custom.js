@@ -99,6 +99,54 @@ jQuery(document).ready(function($) {
 		},800);
 	});
 
+	if( $(window).width() <= 1080 ) {
+		$('.main-navigation ul.menu li.menu-item-has-children').each(function(){
+			const submenu = $(this).find('ul.sub-menu');
+			$('<button class="submenu-toggle" aria-expanded="false"><svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>').insertBefore(submenu);
+		});
+	}
+
+	$(document).on('click', '.submenu-toggle', function(e){
+		e.preventDefault();
+		let isExpanded = $(this).attr('aria-expanded') === 'true';
+		$(this).attr('aria-expanded', !isExpanded);
+		$(this).parents('.menu-item-has-children').find('ul.sub-menu').slideToggle(300);
+	});
+
+	// Smooth scroll to anchor links
+	if(window.location.hash){
+    var hashUrl = window.location.hash;
+    setTimeout(function(){
+      scrollToAnchor(hashUrl);
+    },500);
+  }
+
+	$(document).on('click', 'a[href*="#"]:not([href="#"])', function(e) {
+		if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
+			var target = $(this.hash);
+			target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+			if (target.length) {
+				e.preventDefault();
+				scrollToAnchor(target);
+			}
+		}
+	});
+
+	function scrollToAnchor(anchor) {
+		if( anchor && $(anchor).length ) {
+      var target = $(anchor);
+      $('html, body').animate({
+        scrollTop: target.offset().top
+      }, 600, function() {
+        if ( target.is(":focus") ) {
+          return false;
+        } else {
+          target.attr('tabindex','-1');
+        };
+      });
+    }
+	}
+
 
 });
 
