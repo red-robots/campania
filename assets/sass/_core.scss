@@ -1577,7 +1577,10 @@ body:not(.home) {
 						transform: rotateZ(90deg);
 					}
 				}
+				input[type="submit"],
+				[type="submit"],
 				.gform_button.button {
+					border: 1px solid #000!important;
 					background-color: #000!important;
 					border-radius: 0!important;
 					color: #fff;
@@ -1591,6 +1594,7 @@ body:not(.home) {
 					transition: all ease .3s;
 					min-width: 150px!important;
 					&:hover, &:focus {
+						border: 1px solid $secondary!important;
 						background-color: $secondary!important;
 						color: #000!important;
 					}
