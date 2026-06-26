@@ -1566,6 +1566,7 @@ body:has(.fancybox-navigation-hidden) .fancybox-navigation{visibility:hidden !im
 .repeatable-overlapping_image_and_title .flexwrap{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}
 .repeatable-overlapping_image_and_title .flexwrap.text-position-right{-webkit-box-orient:vertical;-webkit-box-direction:reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse}
 .repeatable-overlapping_image_and_title .flexwrap.text-position-right .textCol{left:unset;right:0}
+.repeatable-text_content_3_columns{margin-top:80px}
 .repeatable-section_bgcolor_border .wrapper div.text{padding:50px 100px}
 }@media screen and (max-width:1080px)and (min-width:960px){.site-header .menu-toggle{display:none}
 }@media screen and (min-width:1381px){.slider-hero .slideshow-wrapper{height:85vh}

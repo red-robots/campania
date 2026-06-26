@@ -1322,6 +1322,9 @@ body:not(.home) {
 .repeatable-text_content_3_columns {
 	margin-top: 50px;
 	margin-bottom: 50px;
+	@include mid {
+		margin-top: 80px;
+	}
 	.contentColumns {
 		.flexwrap {
 			display: flex;
