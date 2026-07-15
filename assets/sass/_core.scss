@@ -91,37 +91,41 @@ div.buttons {
 	&.align-center {
 		justify-content: center;
 	}
-  .button {
-		appearance: none;
-    display: inline-block;
-    text-decoration: none;
-    appearance: none;
-    border: none;
-    padding: 18px 30px 13px;
-    border-radius: 0;
-    min-width: 120px;
-    text-align: center;
-    background-color: #000;
-    color: #FFF;
-    font-family: $font_primary;
-    font-size: 16px;
-		line-height: 1.2;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    overflow: hidden;
-    position: relative;
-    transition: all ease .3s;
-    z-index: 2;
-    &.btn-wide {
-      padding: 12px 15px;
-      min-width: 250px;
-    }
-    &:hover, &:focus {
-      outline: none;
-      background-color: $primary;
-      color: #000;
-    }
-  }
+}
+.button {
+	appearance: none;
+	display: inline-block;
+	text-decoration: none;
+	appearance: none;
+	border: none;
+	padding: 18px 30px 13px;
+	border-radius: 0;
+	min-width: 120px;
+	text-align: center;
+	background-color: #000;
+	color: #FFF;
+	font-family: $font_primary;
+	font-size: 16px;
+	line-height: 1.2;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	overflow: hidden;
+	position: relative;
+	transition: all ease .3s;
+	z-index: 2;
+	&.btn-wide {
+		padding: 12px 15px;
+		min-width: 250px;
+	}
+	&:hover, &:focus {
+		outline: none;
+		background-color: $primary;
+		color: #000;
+	}
+}
+p:has(.button-element.button) {
+	display: flex;
+	gap: 1rem;
 }
 
 .site-header {
@@ -589,6 +593,13 @@ body:not(.home) {
 		div.buttons {
 			margin-top: 30px;
 			margin-bottom: 30px;
+		}
+	}
+
+	@include max(480px) {
+		.flexwrap {
+			flex-wrap: wrap;
+    	flex-direction: column;
 		}
 	}
 }
@@ -1685,6 +1696,9 @@ body:not(.home) {
 
 .categories {
 	padding: 30px 30px;
+	@include max(480px) {
+		padding: 0 0;
+	}
 	ul {
 		margin: 0 0;
 		padding: 0 0;
@@ -2149,6 +2163,114 @@ body:has(.fancybox-navigation-hidden) {
 			>li:after {
 				display: none;
 			}
+		}
+	}
+}
+
+.site-footer.site-footer-v2 {
+	.wrapper {
+		display: flex;
+		justify-content: center;
+	}
+	.flexwrap {
+		display: inline-flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 4rem;
+		.flexcol {
+			// width: 100%;
+			// @include mid {
+			// 	width: 50%;
+			// }
+			.site-icon {
+				justify-content: flex-start;
+				margin-top: 0;
+				margin-bottom: 30px;
+			}
+			h2, h3 {
+				font-size: 20px;
+				line-height: 1.2;
+				letter-spacing: 0.08em;
+				margin: 0 0;
+			}
+
+			&.footerContact {
+				p {
+					margin-top: 0;
+				}
+				a {
+					display: inline-block;
+					color: #000;
+					text-decoration: underline;
+					text-underline-offset: 4px;
+					text-decoration-thickness: 1px;
+					transition: all ease .3s;
+					&:hover, &:focus {
+						text-decoration: none;
+						color: #6e5a1c;
+					}
+				}
+
+				.social-media-links {
+					justify-content: flex-start;
+				}
+			}
+
+			&.footerQuickLinks {
+				ul.menu {
+					display: flex;
+					flex-wrap: wrap;
+					flex-direction: column;
+					gap: 0.5em;
+					> li:after {
+						display: none!important;
+					}
+				}
+			}
+		}
+
+		.flexcol.site-icon {
+			margin: 0 0!important;
+			justify-content: flex-start;
+		}
+	}
+
+	.flexgroup {
+		display: inline-flex;
+    gap: 5rem;
+	}
+
+	.copyright-container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 1.5rem;
+		width: 100%;
+		.social-media-links {
+			margin: 0 0;
+		}
+	}
+
+	@include max(960px) {
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: flex-start;
+		gap: 2rem;
+		.social-media-links {
+			justify-content: flex-start;
+		}
+		.flexgroup {
+			flex-direction: column;
+			width: 100%;
+			text-align: center;
+			gap: 3rem;
+		}
+	}
+
+	@include max(400px) {
+		.copyright-container {
+			flex-direction: column;
+			justify-content: center;
 		}
 	}
 }

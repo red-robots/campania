@@ -1254,9 +1254,10 @@ div.buttons{display:-webkit-box;display:-ms-flexbox;display:flex;gap:1rem;-webki
 div.buttons.align-left{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 div.buttons.align-right{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}
 div.buttons.align-center{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
-div.buttons .button{-webkit-appearance:none;-moz-appearance:none;appearance:none;display:inline-block;text-decoration:none;appearance:none;border:0;padding:18px 30px 13px;border-radius:0;min-width:120px;text-align:center;background-color:#000;color:#fff;font-family:"Overpass",sans-serif;font-size:16px;line-height:1.2;text-transform:uppercase;letter-spacing:.05em;overflow:hidden;position:relative;-webkit-transition:all ease .3s;transition:all ease .3s;z-index:2}
-div.buttons .button.btn-wide{padding:12px 15px;min-width:250px}
-div.buttons .button:hover,div.buttons .button:focus{outline:0;background-color:#ece9e0;color:#000}
+.button{-webkit-appearance:none;-moz-appearance:none;appearance:none;display:inline-block;text-decoration:none;appearance:none;border:0;padding:18px 30px 13px;border-radius:0;min-width:120px;text-align:center;background-color:#000;color:#fff;font-family:"Overpass",sans-serif;font-size:16px;line-height:1.2;text-transform:uppercase;letter-spacing:.05em;overflow:hidden;position:relative;-webkit-transition:all ease .3s;transition:all ease .3s;z-index:2}
+.button.btn-wide{padding:12px 15px;min-width:250px}
+.button:hover,.button:focus{outline:0;background-color:#ece9e0;color:#000}
+p:has(.button-element.button){display:-webkit-box;display:-ms-flexbox;display:flex;gap:1rem}
 .site-header{padding-top:15px;padding-bottom:15px;position:absolute;top:0;left:0;width:100%;z-index:100}
 .site-header:before{content:"";display:block;width:100%;height:165%;position:absolute;top:0;left:0;pointer-events:none;background:-webkit-gradient(linear,left top,left bottom,color-stop(13%,white),to(rgba(255,255,255,0)));background:linear-gradient(to bottom,white 13%,rgba(255,255,255,0) 100%)}
 .site-header .header-inner{padding-left:20px;padding-right:20px;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;position:relative;z-index:10}
@@ -1534,6 +1535,20 @@ body:has(.fancybox-navigation-hidden) .fancybox-navigation{visibility:hidden !im
 .site-footer .social-media-links{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;gap:1.5rem;margin-top:25px}
 .site-footer .social-media-links a{display:inline-block;text-decoration:none;color:#000;font-size:28px;line-height:1;-webkit-transition:all ease .3s;transition:all ease .3s}
 .site-footer .social-media-links a:hover,.site-footer .social-media-links a:focus{-webkit-transform:scale(1.1);transform:scale(1.1)}
+.site-footer.site-footer-v2 .wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+.site-footer.site-footer-v2 .flexwrap{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;gap:4rem}
+.site-footer.site-footer-v2 .flexwrap .flexcol .site-icon{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;margin-top:0;margin-bottom:30px}
+.site-footer.site-footer-v2 .flexwrap .flexcol h2,.site-footer.site-footer-v2 .flexwrap .flexcol h3{font-size:20px;line-height:1.2;letter-spacing:.08em;margin:0}
+.site-footer.site-footer-v2 .flexwrap .flexcol.footerContact p{margin-top:0}
+.site-footer.site-footer-v2 .flexwrap .flexcol.footerContact a{display:inline-block;color:#000;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;-webkit-transition:all ease .3s;transition:all ease .3s}
+.site-footer.site-footer-v2 .flexwrap .flexcol.footerContact a:hover,.site-footer.site-footer-v2 .flexwrap .flexcol.footerContact a:focus{text-decoration:none;color:#6e5a1c}
+.site-footer.site-footer-v2 .flexwrap .flexcol.footerContact .social-media-links{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
+.site-footer.site-footer-v2 .flexwrap .flexcol.footerQuickLinks ul.menu{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;gap:.5em}
+.site-footer.site-footer-v2 .flexwrap .flexcol.footerQuickLinks ul.menu>li:after{display:none !important}
+.site-footer.site-footer-v2 .flexwrap .flexcol.site-icon{margin:0 0 !important;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
+.site-footer.site-footer-v2 .flexgroup{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;gap:5rem}
+.site-footer.site-footer-v2 .copyright-container{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;gap:1.5rem;width:100%}
+.site-footer.site-footer-v2 .copyright-container .social-media-links{margin:0}
 @media(min-width:960px){.site-header .header-inner{padding-left:80px;padding-right:80px}
 .site-header .main-navigation{right:-80px}
 .repeatable-text_content .flexwrap:has(.columnText1):has(.columnText2) .columnText.has-buttons{-ms-flex-line-pack:center;align-content:center;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}
@@ -1621,6 +1636,9 @@ body.logged-in.admin-bar .site-header .closeMenuToggle{top:50px}
 .repeatable-category_section .categories .imageBlock{width:50%;padding:20px}
 .site-footer ul.menu{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;gap:1.5rem}
 .site-footer ul.menu>li:after{display:none}
+.site-footer.site-footer-v2{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;gap:2rem}
+.site-footer.site-footer-v2 .social-media-links{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
+.site-footer.site-footer-v2 .flexgroup{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;width:100%;text-align:center;gap:3rem}
 }@media screen and (max-width:860px){.gallery-container{padding-left:20px;padding-right:20px}
 .gallery-container .masonry-grid .grid-item{width:50%}
 }@media screen and (max-width:782px){body.logged-in.admin-bar .site-header .closeMenuToggle{top:60px}
@@ -1648,6 +1666,9 @@ body.logged-in.admin-bar .site-header .closeMenuToggle{top:50px}
 .gallery-container .masonry-grid .grid-item{width:100%}
 .site-header .primary-navigation{max-width:100%}
 .site-header .site-logo{width:220px}
+}@media screen and (max-width:480px){.repeatable-text_content .flexwrap{-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}
+.categories{padding:0}
+}@media screen and (max-width:400px){.site-footer.site-footer-v2 .copyright-container{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 }@media(print),(prefers-reduced-motion:reduce){.animated{-webkit-animation-duration:1ms !important;animation-duration:1ms !important;-webkit-transition-duration:1ms !important;transition-duration:1ms !important;-webkit-animation-iteration-count:1 !important;animation-iteration-count:1 !important}
 }@-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}
 100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}
