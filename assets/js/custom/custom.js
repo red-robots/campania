@@ -19,6 +19,26 @@ jQuery(document).ready(function($) {
 		});
 	}
 
+	if( $('.categories ul li').length ) {
+		const countCategories = $('.categories ul li').length;
+		if( countCategories > 1 ) {
+			var categoriesList = '';
+			$('.categories ul li').each(function() {
+				const catLink = $(this).find('a').attr('href');
+				const termSlug = $(this).find('a').attr('data-term-slug');
+				const catText = $(this).text().trim();
+				const currentCategory = (params.category!=undefined && params.category!='') ? params.category : '';
+				const isCategorySelected = (termSlug==currentCategory) ? ' selected' : '';
+				categoriesList += '<option data-category="'+catLink+'" value="' + catLink + '" '+isCategorySelected + '>' + catText + '</option>';
+			});
+			$('<select id="categories-mobile-select" class="categories-mobile-select">'+categoriesList+'</select>').insertAfter('.categories ul');
+			$('.categories-mobile-select').on('change', function() {
+				const selectedCategory = $(this).val();
+				window.location.href = selectedCategory;
+			});
+		}
+	}
+
 	if( !$('body').hasClass('home') ) {
 		if( $('#primary').length ) {
 			const firstDiv = $('#primary div').first();

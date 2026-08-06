@@ -28,6 +28,10 @@ $featImg = wp_get_attachment_image_src($thumbId,'full'); ?>
 <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="<?php bloginfo("template_url") ?>/css/swiper-bundle.min.css">
 <link rel="stylesheet" href="<?php bloginfo("template_url") ?>/css/jquery.fancybox.min.css">
+<script>
+var currentURL = '<?php echo get_permalink();?>';
+var params={};location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){params[k]=v});
+</script>
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>

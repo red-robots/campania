@@ -50,7 +50,7 @@ if($filter_category) {
     <div class="categories">
       <ul>
         <li>
-          <a href="<?php echo get_permalink() ?>" class="term-link term-all<?php echo (empty($filter_category)) ? ' current':''; ?>"><span>All</span></a>
+          <a href="<?php echo get_permalink() ?>" data-term-slug="all" class="term-link term-all<?php echo (empty($filter_category)) ? ' current':''; ?>"><span>All</span></a>
         </li>
       <?php foreach($terms as $term) { 
         $term_slug = $term->slug;
@@ -60,7 +60,7 @@ if($filter_category) {
         $pagelink = get_permalink() . '?category=' . $term_slug;
         ?>
         <li>
-          <a href="<?php echo $pagelink ?>" class="term-link term-<?php echo $term_slug . $is_current?>"><span><?php echo $term_name; ?></span></a>
+          <a href="<?php echo $pagelink ?>" data-term-slug="<?php echo $term_slug ?>" class="term-link term-<?php echo $term_slug . $is_current?>"><span><?php echo $term_name; ?></span></a>
         </li>
       <?php } ?>
       </ul>

@@ -1,5 +1,7 @@
 (function() {
-  tinymce.PluginManager.add( 'ctabutton', function( editor, url ) {
+  if( window.tinymce!=undefined ) {
+    const tinyMCEInit = window.tinymce;
+    tinyMCEInit.PluginManager.add( 'ctabutton', function( editor, url ) {
       //console.log(url);
       var parts = url.split('assets');
       var themeURL = parts[0];
@@ -25,6 +27,7 @@
         editor.execCommand('mceReplaceContent', false, return_text);
         return;
       });
-  });
+    });
 
+  }
 })();

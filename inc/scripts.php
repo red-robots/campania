@@ -64,12 +64,6 @@ function bellaworks_scripts() {
   );
 
   wp_enqueue_script(
-    'bellaworks-custom-tinymce',
-    get_template_directory_uri() . '/assets/js/custom/custom-tinymce.js',
-    array(), '07152026', true
-  );
-
-  wp_enqueue_script(
     'bellaworks-custom',
     get_template_directory_uri() . '/assets/js/custom/custom.js',
     array(), '20260218', true
@@ -96,5 +90,13 @@ function bellaworks_scripts() {
 add_action( 'wp_enqueue_scripts', 'bellaworks_scripts' );
 
 
-
+function bellaworks_load_custom_admin_script() {
+  wp_enqueue_script(
+    'bellaworks-custom-tinymce',
+    get_template_directory_uri() . '/assets/js/custom/custom-tinymce.js',
+    array(), '07152026', true
+  );
+  
+}
+add_action('admin_enqueue_scripts', 'bellaworks_load_custom_admin_script');
 

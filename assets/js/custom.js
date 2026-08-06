@@ -1,33 +1,36 @@
 "use strict";
 
 (function () {
-  tinymce.PluginManager.add('ctabutton', function (editor, url) {
-    //console.log(url);
-    var parts = url.split('assets');
-    var themeURL = parts[0]; // Add Button to Visual Editor Toolbar
+  if (window.tinymce != undefined) {
+    var tinyMCEInit = window.tinymce;
+    tinyMCEInit.PluginManager.add('ctabutton', function (editor, url) {
+      //console.log(url);
+      var parts = url.split('assets');
+      var themeURL = parts[0]; // Add Button to Visual Editor Toolbar
 
-    editor.addButton('edbutton1', {
-      title: 'Button',
-      cmd: 'edbutton1',
-      image: themeURL + 'assets/img/custom-button.png'
-    }); // Add Command when Button Clicked
+      editor.addButton('edbutton1', {
+        title: 'Button',
+        cmd: 'edbutton1',
+        image: themeURL + 'assets/img/custom-button.png'
+      }); // Add Command when Button Clicked
 
-    editor.addCommand('edbutton1', function () {
-      var selected_text = editor.selection.getContent();
+      editor.addCommand('edbutton1', function () {
+        var selected_text = editor.selection.getContent();
 
-      if (selected_text.length === 0) {
-        alert('Please select some text.');
+        if (selected_text.length === 0) {
+          alert('Please select some text.');
+          return;
+        }
+
+        var open_column = '<a data-mce-href="#" href="#"  data-mce-selected="inline-boundary" class="button-element button">';
+        var close_column = '</a>';
+        var return_text = '';
+        return_text = open_column + selected_text + close_column;
+        editor.execCommand('mceReplaceContent', false, return_text);
         return;
-      }
-
-      var open_column = '<a data-mce-href="#" href="#"  data-mce-selected="inline-boundary" class="button-element button">';
-      var close_column = '</a>';
-      var return_text = '';
-      return_text = open_column + selected_text + close_column;
-      editor.execCommand('mceReplaceContent', false, return_text);
-      return;
+      });
     });
-  });
+  }
 })();
 "use strict";
 
@@ -51,6 +54,27 @@ jQuery(document).ready(function ($) {
         $(this).addClass('next-element-' + nextDataGroup);
       }
     });
+  }
+
+  if ($('.categories ul li').length) {
+    var countCategories = $('.categories ul li').length;
+
+    if (countCategories > 1) {
+      var categoriesList = '';
+      $('.categories ul li').each(function () {
+        var catLink = $(this).find('a').attr('href');
+        var termSlug = $(this).find('a').attr('data-term-slug');
+        var catText = $(this).text().trim();
+        var currentCategory = params.category != undefined && params.category != '' ? params.category : '';
+        var isCategorySelected = termSlug == currentCategory ? ' selected' : '';
+        categoriesList += '<option data-category="' + catLink + '" value="' + catLink + '" ' + isCategorySelected + '>' + catText + '</option>';
+      });
+      $('<select id="categories-mobile-select" class="categories-mobile-select">' + categoriesList + '</select>').insertAfter('.categories ul');
+      $('.categories-mobile-select').on('change', function () {
+        var selectedCategory = $(this).val();
+        window.location.href = selectedCategory;
+      });
+    }
   }
 
   if (!$('body').hasClass('home')) {
