@@ -5,6 +5,20 @@
  */
 jQuery(document).ready(function($) {
 
+	if( $('.repeatable').length ) {
+		$('.repeatable').each(function() {
+			const groupName = $(this).attr('data-group');
+			if( $(this).prev().hasClass('repeatable') ) {
+				const prevDataGroup = $(this).prev().attr('data-group');
+				$(this).addClass('prev-element-' + prevDataGroup);
+			}
+			if( $(this).next().hasClass('repeatable') ) {
+				const nextDataGroup = $(this).next().attr('data-group');
+				$(this).addClass('next-element-' + nextDataGroup);
+			}
+		});
+	}
+
 	if( !$('body').hasClass('home') ) {
 		if( $('#primary').length ) {
 			const firstDiv = $('#primary div').first();

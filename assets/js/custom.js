@@ -37,6 +37,22 @@
  *  Date Modified: 03.31.2026
  */
 jQuery(document).ready(function ($) {
+  if ($('.repeatable').length) {
+    $('.repeatable').each(function () {
+      var groupName = $(this).attr('data-group');
+
+      if ($(this).prev().hasClass('repeatable')) {
+        var prevDataGroup = $(this).prev().attr('data-group');
+        $(this).addClass('prev-element-' + prevDataGroup);
+      }
+
+      if ($(this).next().hasClass('repeatable')) {
+        var nextDataGroup = $(this).next().attr('data-group');
+        $(this).addClass('next-element-' + nextDataGroup);
+      }
+    });
+  }
+
   if (!$('body').hasClass('home')) {
     if ($('#primary').length) {
       var firstDiv = $('#primary div').first();

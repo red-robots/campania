@@ -50,6 +50,13 @@ h3 {font-size: 30px;}
 h4 {font-size: 25px;}
 h5 {font-size: 20px;}
 h6 {font-size: 17px;}
+@media screen and (max-width: 768px) {
+	h2 {font-size: clamp(20px,5vw,35px);}
+	h3 {font-size: clamp(18px,4vw,25px);}
+	h4 {font-size: clamp(16px,3vw,20px);}
+	h5 {font-size: clamp(14px,2vw,17px);}
+	h6 {font-size: clamp(12px,1.5vw,15px);}
+}
 
 .site {
 	position: relative;
@@ -350,7 +357,7 @@ body:not(.home) {
 	// 	height: 70vh;
 	// }
 	@include max(768px) {
-		height: 600px;
+		height: 430px;
 		margin-bottom: 40px;
 	}
 	.hero-image-inner {
@@ -421,7 +428,7 @@ body:not(.home) {
 			height: 85vh;
 		}
 		@include max(768px) {
-			height: 600px;
+			height: 430px;
 			margin-bottom: 40px;
 		}
 	}
@@ -1082,6 +1089,19 @@ body:not(.home) {
 			}
 		}
 	}
+
+	&.prev-element-hero {
+		padding-top: 0!important;
+	}
+
+	@media screen and (max-width: 768px) {
+		.text p:has(iframe) {
+			margin: 0 0!important;
+		}
+		.text iframe {
+			width: 100%!important;
+		}
+	}
 }
 
 .repeatable-horizontal_line {
@@ -1102,6 +1122,9 @@ body:not(.home) {
 	.inside {
 		background: $primary;
 		padding: 50px;
+		@media screen and (max-width: 768px) {
+			padding: 30px;
+		}
 		.wrap {
 			border: 1px solid #000;
 			padding: 50px 20px;
@@ -1110,10 +1133,14 @@ body:not(.home) {
 				padding-left: 40px;
 				padding-right: 40px;
 			}
-			&:has(.top-text):has(.iconList) {
-				.top-text {
-					margin-bottom: 20px;
-				}
+		}
+	}
+	&:has(.top-text):has(.iconList),
+	&:has(.top-text):has(.iconsList) {
+		.top-text {
+			margin-bottom: 20px;
+			@media screen and (max-width: 768px) {
+				margin-bottom: 40px;
 			}
 		}
 	}
@@ -1151,6 +1178,19 @@ body:not(.home) {
 				h2,h3, p {
 					margin-top: 0;
 				}
+			}
+		}
+
+		@media screen and (max-width: 768px) {
+			.info {
+				padding: 30px 10px;
+			}
+			.inner {
+				flex-wrap: wrap;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
 			}
 		}
 	}
@@ -2521,6 +2561,15 @@ body:has(.fancybox-navigation-hidden) {
 	}
 	.site-header .site-logo {
 		width: 220px;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	p:has(.button-element.button) {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		justify-content: center;
 	}
 }
 
